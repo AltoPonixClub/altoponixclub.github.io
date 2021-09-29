@@ -33,5 +33,9 @@ a {
     line-height:60px;
     color:black;
     text-decoration: none !important;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+a:hover { 
+    color:#999;
 }
