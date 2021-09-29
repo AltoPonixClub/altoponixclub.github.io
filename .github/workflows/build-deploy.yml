@@ -24,7 +24,7 @@ jobs:
       run: |
         npm install
         npm run-script deploy
-        cp index.html 404.html
+        cp dist/altoponixclub.github.io/index.html dist/altoponixclub.github.io/404.html
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
