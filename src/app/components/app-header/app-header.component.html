@@ -6,10 +6,19 @@
         </a>
     </div>
     <div class="spacing"></div>
-    <div class="link-container">
+    <button (click)="toggleOverlay()" class="overlay-button" [ngClass]="{' overlay': !overlay}">
+        {{overlay ? "≡" : "╳"}}
+    </button>
+    <div class="link-container" [ngClass]="{' overlay': !overlay}">
         <a class="link" routerLink="/about" routerLinkActive="active">About</a>
         <a class="link" routerLink="/subteams" routerLinkActive="active">Subteams</a>
         <a class="link" routerLink="/positions" routerLinkActive="active">Positions</a>
         <a class="link" routerLink="/contact" routerLinkActive="active">Contact</a>
     </div>
+</div>
+<div class="link-container-overlay" [ngClass]="{' overlay': !overlay}">
+    <a class="link" routerLink="/about" routerLinkActive="active">About</a>
+    <a class="link" routerLink="/subteams" routerLinkActive="active">Subteams</a>
+    <a class="link" routerLink="/positions" routerLinkActive="active">Positions</a>
+    <a class="link" routerLink="/contact" routerLinkActive="active">Contact</a>
 </div>

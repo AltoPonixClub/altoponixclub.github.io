@@ -33,15 +33,57 @@ a {
     line-height:60px;
     color:black;
     text-decoration: none !important;
-    transition-duration: 0.2s;
+    transition-duration: 0.1s;
     transition-timing-function: ease-out;
 }
 a:hover { 
     color:#999;
 }
 
+.overlay-button {
+    display: none;
+    margin-bottom:15px;
+    margin-top:5px;
+    height:50px;
+    width:50px;
+    color: black;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 30px;
+}
+
+.overlay-button.overlay {
+    font-size:20px;
+}
+
+.link-container-overlay{
+    display:flex;
+    position:fixed;
+    border-bottom: 1px #ddd solid;
+    background-color:white;
+    padding: 0px 50px;
+    flex-direction: column;
+    border-bottom: 1px #ddd solid;
+    height:0;
+    width:100vw;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    overflow:hidden;
+    transition-property: height,padding;
+}
+
 @media (max-width: 700px) {
-    .title {
-        display:none;
+    .overlay-button {
+        display: block;
+    }
+    .link-container {
+        display:none
+    }
+    .link-container-overlay.overlay {
+        top:80px;
+        width:100vw;
+        height:260px;
+        padding: 10px 50px;
     }
 }

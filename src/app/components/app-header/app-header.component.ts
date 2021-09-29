@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+    overlay: boolean = true;
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+    }
+
+    toggleOverlay(): void {
+        this.overlay = !this.overlay;
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event: any): void {
+        if (event.target.innerWidth > 700 && !this.overlay) {
+            this.overlay = true;
+        }
+    }
 
 }
