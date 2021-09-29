@@ -9,6 +9,7 @@
     flex-direction: column;
     text-align: center;
     color:white;
+    padding:40px;
 }
 
 .title {
@@ -21,7 +22,7 @@
     margin-bottom: 10px;
 }
 .description {
-    font-size: 30px;
+    font-size: 20px;
     font-weight:300;
 }
 
@@ -30,7 +31,24 @@ a {
     text-decoration: none !important;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
+    transition-property: color;
 }
 a:hover {
     color:#40b1e6;
+}
+
+@media (max-width: 700px) {
+    .title {
+        font-size: 80px;
+        font-weight:200;
+    }
+    .subtitle {
+        font-size: 40px;
+        font-weight:300;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-size: 15px;
+        font-weight:300;
+    }
 }

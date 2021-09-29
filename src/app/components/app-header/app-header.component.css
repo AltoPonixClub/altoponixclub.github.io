@@ -39,3 +39,9 @@ a {
 a:hover { 
     color:#999;
 }
+
+@media (max-width: 700px) {
+    .title {
+        display:none;
+    }
+}
