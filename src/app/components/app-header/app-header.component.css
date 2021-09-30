@@ -60,11 +60,10 @@ a:hover {
 .link-container-overlay{
     display:flex;
     position:fixed;
-    border-bottom: 1px #ddd solid;
     background-color:white;
     padding: 0px 50px;
     flex-direction: column;
-    border-bottom: 1px #ddd solid;
+    border-bottom: 0px #ddd solid;
     height:0;
     width:100vw;
     transition-duration: 0.3s;
@@ -74,6 +73,12 @@ a:hover {
 }
 
 @media (max-width: 700px) {
+    .title{
+        margin-left: 10px;
+    }
+    .container{
+        padding-left: 30px;
+    }
     .overlay-button {
         display: block;
     }
@@ -81,6 +86,7 @@ a:hover {
         display:none
     }
     .link-container-overlay.overlay {
+        border-bottom: 1px #ddd solid;
         top:80px;
         width:100vw;
         height:260px;
