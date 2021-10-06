@@ -6,13 +6,13 @@
             linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
             linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
     background-size: 400% 400%;
-    height: 500px;
+    height: calc(100vh - 80px);
     display:flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    color:white;
+    color:black;
     padding:40px;
     -webkit-animation: Gradient 10s ease infinite;
     -moz-animation: Gradient 10s ease infinite;
@@ -72,6 +72,22 @@ a:hover {
     }
     .description {
         font-size: 15px;
+        font-weight:300;
+    }
+}
+
+@media (max-height: 400px) {
+    .title {
+        font-size: 30px;
+        font-weight:200;
+    }
+    .subtitle {
+        font-size: 20px;
+        font-weight:300;
+        margin-bottom: 10px;
+    }
+    .description {
+        font-size: 10px;
         font-weight:300;
     }
 }
