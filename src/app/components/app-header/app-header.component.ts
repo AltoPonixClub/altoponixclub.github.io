@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,7 @@ export class AppHeaderComponent implements OnInit {
 
     overlay: boolean = true;
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit(): void {
     }
@@ -26,4 +28,12 @@ export class AppHeaderComponent implements OnInit {
         }
     }
 
+    route(url: string): void {
+        setTimeout(()=>{
+            this.router.navigateByUrl(url);
+        },250)
+        console.log(url)
+        this.overlay = true;
+        window.location.href = url;
+    }
 }
