@@ -39,13 +39,20 @@ app-logo >>> img{
     font-size: 18px;
     transition: cubic-bezier(0.23, 1, 0.320, 1);
     transition-duration: 0.3s;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
+
 .title-container {
     flex: 1 0 auto;
 }
+
 .link-container {
     overflow:hidden;
 }
+ 
 .link {
     float: left;
     height: 100%;
@@ -53,8 +60,9 @@ app-logo >>> img{
     color:black;
     text-decoration: none !important;
     transition-duration: 0.3s;
-    transition-timing-function: ease-out;
+    transition-timing-function: cubic-bezier(.25,.15,0,.94);
 }
+
 .link:hover { 
     color:#999;
 }
