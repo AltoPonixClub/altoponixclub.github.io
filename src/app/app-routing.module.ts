@@ -13,6 +13,8 @@ const routes: Routes = [
     { path: 'about', component: AboutPageComponent },
     { path: 'positions', component: PositionsPageComponent },
     { path: 'contact', component: ContactPageComponent },
+    { path: 'feed',   redirectTo: '/s2-webapp', pathMatch: 'full' },
+    { path: 'data',   redirectTo: '/s2-webapp', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent },
 ];
 
