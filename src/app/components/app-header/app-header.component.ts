@@ -29,10 +29,6 @@ export class AppHeaderComponent implements OnInit {
     }
 
     route(url: string): void {
-        setTimeout(()=>{
-            this.router.navigateByUrl(url);
-        },250)
-        console.log(url)
         this.overlay = true;
         window.location.href = url;
     }
