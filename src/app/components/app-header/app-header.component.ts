@@ -10,26 +10,33 @@ import { EventEmitter } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-    overlay: boolean = true;
+  overlay: boolean = true;
+  title: string = "AltoPonix"
+  disablelinks: boolean = false;
 
-    constructor(private router: Router) { }
+  constructor(private router: Router) { }
 
-    ngOnInit(): void {
+  ngOnInit(): void {
+    let path = window.location.pathname
+    if (path === '/s2-webapp' || path === '/feed' || path === '/data') {
+      this.title = "AltoPonix Data Monitor"
+      this.disablelinks = true
     }
+  }
 
-    toggleOverlay(): void {
-        this.overlay = !this.overlay;
-    }
+  toggleOverlay(): void {
+    this.overlay = !this.overlay;
+  }
 
-    @HostListener('window:resize', ['$event'])
-    onResize(event: any): void {
-        if (event.target.innerWidth > 700 && !this.overlay) {
-            this.overlay = true;
-        }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    if (event.target.innerWidth > 700 && !this.overlay) {
+      this.overlay = true;
     }
+  }
 
-    route(url: string): void {
-        this.overlay = true;
-        window.location.href = url;
-    }
+  route(url: string): void {
+    this.overlay = true;
+    window.location.href = url;
+  }
 }

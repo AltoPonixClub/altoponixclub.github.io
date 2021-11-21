@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RedirPageComponent } from './redir-page.component';
+import { WebappPageComponent } from './webapp-page.component';
 
-describe('RedirPageComponent', () => {
-  let component: RedirPageComponent;
-  let fixture: ComponentFixture<RedirPageComponent>;
+describe('WebappPageComponent', () => {
+  let component: WebappPageComponent;
+  let fixture: ComponentFixture<WebappPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RedirPageComponent ]
+      declarations: [ WebappPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RedirPageComponent);
+    fixture = TestBed.createComponent(WebappPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

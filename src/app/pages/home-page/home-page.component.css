@@ -1,62 +1,60 @@
 .container{
-    background:
-            linear-gradient(127deg, rgba(102, 173, 112, 0.8), rgba(74, 148, 72, 0) 12.35%),
-            linear-gradient(336deg, rgba(56, 189, 138, 0.8), rgba(134, 179, 52, 0) 25.25%),
-            linear-gradient(83deg, rgba(74, 204, 187, 0.8), rgba(57, 214, 117, 0) 50.63%),
-            linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
-            linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
-    background-size: 400% 400%;
-    height: 500px;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    color:black;
-    padding:100px;
-    -webkit-animation: Gradient 10s ease infinite;
-    -moz-animation: Gradient 10s ease infinite;
-    animation: Gradient 10s ease infinite;
-    overflow:hidden;
+  background:
+          linear-gradient(127deg, rgba(102, 173, 112, 0.8), rgba(74, 148, 72, 0) 12.35%),
+          linear-gradient(336deg, rgba(56, 189, 138, 0.8), rgba(134, 179, 52, 0) 25.25%),
+          linear-gradient(83deg, rgba(74, 204, 187, 0.8), rgba(57, 214, 117, 0) 50.63%),
+          linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
+          linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
+  background-size: 400% 400%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color:black;
+  padding: 100px;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  overflow: hidden;
 }
 
 @-webkit-keyframes Gradient {
-    0%{background-position:0% 72%}
-    50%{background-position:100% 29%}
-    100%{background-position:0% 72%}
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
 }
 @-moz-keyframes Gradient {
-    0%{background-position:0% 72%}
-    50%{background-position:100% 29%}
-    100%{background-position:0% 72%}
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
 }
 @keyframes Gradient { 
-    0%{background-position:0% 72%}
-    50%{background-position:100% 29%}
-    100%{background-position:0% 72%}
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
 }
 
 .grid{
-    display:grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding: 0 100px;
-    margin-bottom:20px;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 0 100px;
+  margin-bottom:20px;
 }
-
 .title {
-    font-size: 70px;
-    font-weight:500;
-    width:50%;
+  font-size: 70px;
+  font-weight: 500;
+  width: 50%;
 }
 .subtitle {
-    font-size: 45px;
-    font-weight:100;
-    margin-bottom: 10px;
-    width:50%;
+  font-size: 45px;
+  font-weight: 100;
+  margin-bottom: 10px;
+  width: 50%;
 }
 .description {
-    font-size: 30px;
-    font-weight:300;
+  font-size: 30px;
+  font-weight: 300;
 }
-
 a {
     color:#289acf;
     text-decoration: none !important;
@@ -64,23 +62,23 @@ a {
     transition-timing-function: ease-out;
 }
 a:hover {
-    color:#40b1e6;
+  color:#40b1e6;
 }
 
 @media (max-width: 800px) {
-    .title {
-        font-size: 60px;
-        font-weight:200;
-    }
-    .subtitle {
-        font-size: 35px;
-        font-weight:100;
-        margin-bottom: 10px;
-        width:100%;
-        text-align:center;
-    }
-    .description {
-        font-size: 15px;
-        font-weight:300;
-    }
+  .title {
+    font-size: 60px;
+    font-weight: 200;
+  }
+  .subtitle {
+    font-size: 35px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align:center;
+  }
+  .description {
+    font-size: 15px;
+    font-weight: 300;
+  }
 }

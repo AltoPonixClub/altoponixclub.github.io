@@ -6,18 +6,18 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PositionsPageComponent } from './pages/positions-page/positions-page.component';
 import { SubteamsPageComponent } from './pages/subteams-page/subteams-page.component';
-import { RedirPageComponent } from './pages/redir-page/redir-page.component';
+import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
 
 const routes: Routes = [
-    { path: '', component: HomePageComponent },
-    { path: 'subteams', component: SubteamsPageComponent },
-    { path: 'about', component: AboutPageComponent },
-    { path: 'positions', component: PositionsPageComponent },
-    { path: 'contact', component: ContactPageComponent },
-    { path: 's2-webapp', component: RedirPageComponent },
-    { path: 'feed', redirectTo: '/s2-webapp', pathMatch: 'full' },
-    { path: 'data', redirectTo: '/s2-webapp', pathMatch: 'full' },
-    { path: '**', component: PageNotFoundComponent },
+  { path: '', component: HomePageComponent },
+  { path: 'subteams', component: SubteamsPageComponent },
+  { path: 'about', component: AboutPageComponent },
+  { path: 'positions', component: PositionsPageComponent },
+  { path: 'contact', component: ContactPageComponent },
+  { path: 's2-webapp', component: WebappPageComponent },
+  { path: 'feed', redirectTo: '/s2-webapp', pathMatch: 'full' },
+  { path: 'data', redirectTo: '/s2-webapp', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

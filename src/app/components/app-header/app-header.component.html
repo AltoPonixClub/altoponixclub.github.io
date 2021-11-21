@@ -1,25 +1,27 @@
 <div class="container-spacing"></div>
 <div class="container">
-    <div class="title-container">
-        <div class="link" (click)="route('/')">
-            <app-logo></app-logo>
-            <div class="title">AltoPonix</div>
-        </div>
+  <div class="title-container">
+    <div class="link" (click)="route('/')">
+        <app-logo></app-logo>
+        <div class="title">{{title}}</div>
     </div>
-    <div class="spacing"></div>
-    <button (click)="toggleOverlay()" class="overlay-button" [ngClass]="{' overlay': !overlay}">
-        {{overlay ? "≡" : "╳"}}
-    </button>
-    <div class="link-container" [ngClass]="{' overlay': !overlay}">
-        <div class="link" (click)="route('/about')">About</div>
-        <div class="link" (click)="route('/subteams')">Subteams</div>
-        <div class="link" (click)="route('/positions')">Positions</div>
-        <div class="link" (click)="route('/contact')">Contact</div>
-    </div>
-</div>
-<div class="link-container-overlay" [ngClass]="{' overlay': !overlay}">
+  </div>
+  <div class="spacing"></div>
+  <button (click)="toggleOverlay()" class="overlay-button" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
+    {{overlay ? "≡" : "╳"}}
+  </button>
+  <div class="link-container" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
     <div class="link" (click)="route('/about')">About</div>
     <div class="link" (click)="route('/subteams')">Subteams</div>
     <div class="link" (click)="route('/positions')">Positions</div>
     <div class="link" (click)="route('/contact')">Contact</div>
+  </div>
+</div>
+<div *ngIf="!disablelinks">
+  <div class="link-container-overlay" [ngClass]="{' overlay': !overlay}">
+    <div class="link" (click)="route('/about')">About</div>
+    <div class="link" (click)="route('/subteams')">Subteams</div>
+    <div class="link" (click)="route('/positions')">Positions</div>
+    <div class="link" (click)="route('/contact')">Contact</div>
+  </div>
 </div>

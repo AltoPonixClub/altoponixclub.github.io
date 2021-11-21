@@ -1,131 +1,121 @@
 .container {
-    height: 80px;
-    width:100%;
-    background-color: white;
-    border-bottom: 1px #ddd solid;
-    padding-top: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
-    display:flex;
-    position:fixed;
-    top:0px;
-    transition:cubic-bezier(0.215, 0.610, 0.355, 1);
-    transition-duration: 0.3s;
+  height: 80px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px #ddd solid;
+  padding-top: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  display:flex;
+  position:fixed;
+  top:0px;
 }
 .title{
-    margin-left: 15px;
-    font-size: 32px;
-    font-weight: 300;
-    float: right;
+  margin-left: 15px;
+  font-size: 32px;
+  font-weight: 300;
+  float: right;
 }
 app-logo >>> img{
-    position: relative;
-    top: 5px;
-    height:50px;
+  position: relative;
+  top: 5px;
+  height:50px;
 }
 .spacing{
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 .container-spacing {
-    height:80px;
-    width:100vw;
-    background-color: white;
-    position:relative;
-    opacity: 0;
+  height: 80px;
+  width: 100vw;
+  background-color: white;
+  position: relative;
+  opacity: 0;
 }
 .link{
-    font-weight: 200;
-    margin-right: 20px;
-    font-size: 18px;
-    transition: cubic-bezier(0.23, 1, 0.320, 1);
-    transition-duration: 0.3s;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
+  font-weight: 200;
+  margin-right: 20px;
+  font-size: 18px;
+  transition: cubic-bezier(.23, 1, .32, 1);
+  transition-duration: 0.3s;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
-
 .title-container {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
-
 .link-container {
-    overflow:hidden;
+  overflow: hidden;
 }
- 
 .link {
-    float: left;
-    height: 100%;
-    line-height:60px;
-    color:black;
-    text-decoration: none !important;
-    transition-duration: 0.3s;
-    transition-timing-function: cubic-bezier(.25,.15,0,.94);
+  float: left;
+  height: 100%;
+  line-height: 60px;
+  color:black;
+  text-decoration: none !important;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(.25, .15, 0, .94);
 }
-
 .link:hover { 
-    color:#999;
+  color:#999;
 }
-
 .overlay-button {
-    transition:cubic-bezier(.25,.15,0,.94);
-    transition-duration: 0.3s;
-    transition-property: transform;
-    display: block;
-    transform: scale(0,0);
-    margin-bottom:15px;
-    margin-top:5px;
-    height:50px;
-    width:50px;
-    color: black;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 30px;
+  transition: cubic-bezier(.25, .15, 0, .94);
+  display: block;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transform: scale(0, 0);
+  margin-bottom: 15px;
+  margin-top: 5px;
+  height: 50px;
+  width: 50px;
+  font-size: 30px;
+  color: black;
+  transition-duration: 0.3s;
+  transition-property: transform;
 }
-
 .overlay-button.overlay {
-    font-size:20px;
+  font-size: 20px;
 }
-
 .link-container-overlay{
-    display:flex;
-    position:fixed;
-    top:80px;
-    background-color:white;
-    padding: 0px 50px;
-    flex-direction: column;
-    border-bottom: 0px #ddd solid;
-    height:0;
-    width:100vw;
-    transition:cubic-bezier(.25,.15,0,.94);
-    transition-duration: 0.3s;
-    overflow:hidden;
-    transition-property: height, padding;
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  flex-direction: column;
+  background-color:white;
+  border-bottom: 0px #ddd solid;
+  padding: 0px 50px;
+  top: 80px;
+  height: 0;
+  width: 100vw;
+  transition: cubic-bezier(.25, .15, 0, .94);
+  transition-duration: 0.3s;
+  transition-property: height, padding;
 }
-
 @media (max-width: 750px) {
-    .overlay-button {
-        display: block;
-        transform: scale(1,1);
-    }
-    .link-container .link {
-        opacity:0;
-        font-size:0px;
-        margin-right: 0px;
-    }
-    .link-container-overlay .link {
-        opacity: 0;
-        transition:cubic-bezier(.25,.15,0,.94);
-        transition-duration: 0.3s;
-    }
-    .link-container-overlay.overlay .link {
-        opacity: 1;
-    }
-    .link-container-overlay.overlay {
-        border-bottom: 1px #ddd solid;
-        width:100vw;
-        height:260px;
-        padding: 10px 50px;
-    }
+  .overlay-button {
+    display: block;
+    transform: scale(1, 1);
+  }
+  .link-container .link {
+    opacity: 0;
+    font-size: 0px;
+    margin-right: 0px;
+  }
+  .link-container-overlay .link {
+    opacity: 0;
+    transition: cubic-bezier(.25, .15, 0, .94);
+    transition-duration: 0.3s;
+  }
+  .link-container-overlay.overlay .link {
+    opacity: 1;
+  }
+  .link-container-overlay.overlay {
+    border-bottom: 1px #ddd solid;
+    width: 100vw;
+    height: 260px;
+    padding: 10px 50px;
+  }
 }

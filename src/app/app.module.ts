@@ -11,7 +11,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { PositionsPageComponent } from './pages/positions-page/positions-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { RedirPageComponent } from './pages/redir-page/redir-page.component';
+import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { RedirPageComponent } from './pages/redir-page/redir-page.component';
     PositionsPageComponent,
     ContactPageComponent,
     PageNotFoundComponent,
-    RedirPageComponent
+    WebappPageComponent
   ],
   imports: [
     BrowserModule,
