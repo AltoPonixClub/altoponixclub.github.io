@@ -1,0 +1,61 @@
+.stat {
+  padding: 10px;
+  border: 1px #ddd solid;
+  border-radius: 10px;
+  margin: 5px 5px;
+  height:250px;
+  background-color: #f2f2f2;
+  min-width: 300px;
+  height:300px;
+}
+.stat-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+.stat-value {
+  font-weight: 600;
+  font-size: 30px;
+}
+.data-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.container {
+  padding: 10px;
+  border: 1px #ddd solid;
+  border-radius: 10px;
+  margin: 5px 5px;
+  width: 320px;
+  height: 60px;
+  background-color: #f2f2f2;
+  text-align: center;
+  font-weight: 500;
+}
+.options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px #ddd solid;
+}
+.update {
+  text-align: center;
+  color: #ccc;
+  font-size: 10px;
+  margin: 10px;
+}
+app-graph {
+  align-items: center;
+}
+.prop-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.prop {
+  padding: 10px;
+  border: 1px #ddd solid;
+  border-radius: 10px;
+  margin: 5px 5px;
+  background-color: #f2f2f2;
+}

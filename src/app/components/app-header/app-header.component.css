@@ -9,6 +9,7 @@
   display:flex;
   position:fixed;
   top:0px;
+  z-index: 100;
 }
 .title{
   margin-left: 15px;

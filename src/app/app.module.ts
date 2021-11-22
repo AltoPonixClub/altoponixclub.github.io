@@ -12,6 +12,8 @@ import { PositionsPageComponent } from './pages/positions-page/positions-page.co
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
+import { AppGraphComponent } from './components/app-graph/app-graph.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
     PositionsPageComponent,
     ContactPageComponent,
     PageNotFoundComponent,
-    WebappPageComponent
+    WebappPageComponent,
+    AppGraphComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
