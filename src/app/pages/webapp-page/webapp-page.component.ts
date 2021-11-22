@@ -73,6 +73,11 @@ export class WebappPageComponent implements OnInit {
     }, 100);
   }
 
+  ngOnDestroy(): void {
+    clearInterval(this.timeUpdateFunc)
+    clearInterval(this.dataUpdateFunc)
+  }
+
   onChangeEndpoint(e: any): void {
     let target = e;
     this.endpoint = target.options[target.selectedIndex].text
