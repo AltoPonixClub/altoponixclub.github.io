@@ -1,0 +1,11 @@
+.chart {
+  height: 215px;
+  width: 300px;
+}
+.missing {
+  position: relative; 
+  top: -120px;
+  left: 115px;
+  z-index: 1;
+  color: #ccc
+}

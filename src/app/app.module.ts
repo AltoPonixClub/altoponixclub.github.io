@@ -13,6 +13,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
 import { AppCarouselComponent } from './components/app-carousel/app-carousel.component';
+import { AppGraphComponent } from './components/app-graph/app-graph.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { AppCarouselComponent } from './components/app-carousel/app-carousel.com
     PageNotFoundComponent,
     WebappPageComponent,
     AppCarouselComponent
+    AppGraphComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
