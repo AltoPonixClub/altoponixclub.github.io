@@ -35,7 +35,7 @@ export class WebappPageComponent implements OnInit {
   @ViewChild('user') userRef?: ElementRef
   @ViewChild('monitor') monitorRef?: ElementRef
   
-  endpoint: string = "http://altoponix-database.herokuapp.com/api/v1";
+  endpoint: string = "https://altoponix-database.herokuapp.com/api/v1";
   owners: OwnerList = {};
   users: string[] = [];
   monitors: string[] = [];
