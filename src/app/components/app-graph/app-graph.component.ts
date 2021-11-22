@@ -40,13 +40,13 @@ export class AppGraphComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.data.history != null) {
-      let n: number[][] = []
+      let n: number[][] = [];
       for (let k in this.data.history) {
-        n.push([parseInt(k), this.data.history[k]])
+        n.push([parseInt(k), this.data.history[k]]);
       }
       if (n.length == 0)
         return;
-      this.missing = false
+      this.missing = false;
       this.chart = new Chart({
         chart: {
           type: 'line',

@@ -19,8 +19,8 @@ export class AppHeaderComponent implements OnInit {
   ngOnInit(): void {
     let path = window.location.pathname
     if (path === '/s2-webapp' || path === '/feed' || path === '/data') {
-      this.title = "AltoPonix Data Monitor"
-      this.disablelinks = true
+      this.title = "AltoPonix Data Monitor";
+      this.disablelinks = true;
     }
   }
 

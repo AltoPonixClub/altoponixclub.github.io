@@ -28,13 +28,13 @@ import { ChartModule } from 'angular-highcharts';
     ContactPageComponent,
     PageNotFoundComponent,
     WebappPageComponent,
-    AppCarouselComponent
-    AppGraphComponent
+    AppCarouselComponent,
+    AppGraphComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule
+    ChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

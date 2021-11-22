@@ -15,13 +15,13 @@ export class AppCarouselComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   changeImage(x: number): void {
-    if(this.carousel){
+    if (this.carousel) {
       let children = this.carousel.nativeElement.children;
       this.index += x;
       this.index %= children.length;
       children[this.index].scrollIntoView({behavior: 'smooth'});
-      // console.log(this.carousel.nativeElement.children);
     }
   }
 }
