@@ -1,0 +1,12 @@
+<div id="carouselDiv">
+  <ul #homepageCarousel>
+    <li *ngFor="let image of carouselImage">
+      <img [src]="image">
+    </li>
+  </ul>
+</div>
+
+<div id="buttonDiv">
+  <button id="prev" (click)="changeImage(-1)">&lt;</button>
+  <button id="next" (click)="changeImage(+1)">&gt;</button>
+</div>

@@ -12,6 +12,7 @@ import { PositionsPageComponent } from './pages/positions-page/positions-page.co
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
+import { AppCarouselComponent } from './components/app-carousel/app-carousel.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
     PositionsPageComponent,
     ContactPageComponent,
     PageNotFoundComponent,
-    WebappPageComponent
+    WebappPageComponent,
+    AppCarouselComponent
   ],
   imports: [
     BrowserModule,
