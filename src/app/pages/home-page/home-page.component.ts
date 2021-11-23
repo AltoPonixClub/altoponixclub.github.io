@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  imageURLs: String[] = ["../assets/cool_logo.jpg","../assets/solar_power.png","../assets/watering_mechanism.png"];
+  imageURLs: String[] = ["../assets/solar_power.png","../assets/watering_mechanism.png"];
   
   constructor() { }
 

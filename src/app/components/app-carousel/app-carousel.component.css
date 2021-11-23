@@ -3,24 +3,32 @@ ul {
   margin: 0px;
   padding: 0px;
   overflow: hidden;
-  width: 400px;
+  width: 100vw;
+  filter: brightness(50%);
+  background: #fff;
 }
 li {
+  transform: translateX(25vw);
   display: block;
   list-style: none;
+  width: 100vw;
 }
 img {
   object-fit: scale-down;
-  height: 400px;
-  width: 400px;
+  width: 100vw;
+  max-height: 400px;
 }
 #prev, #next {
   font-size: 32px;
   color: #FFF; 
   background-color: #333;
+  border: 1px #444 solid;
   border-radius: 50%;
   width: 44px; 
   height: 44px;
+  margin: 10px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
 }
 #prev {
   float: left;
@@ -28,15 +36,29 @@ img {
 #next {
   float: right;
 }
+#prev:hover, #next:hover {
+  background-color: #555;
+}
+#prev:active, #next:active {
+  background-color: #666;
+}
+img.active {
+  opacity: 1;
+}
 #buttonDiv {
   position: relative;
   top: -222px;
   display: inline-block; 
-  width: 450px;
-  left: calc(50vw - 225px);
+  width: 100vw;
 }
 #carouselDiv {
   width: 100vw;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 800px) { 
+  li {
+    transform: translate(0);
+  }
 }
