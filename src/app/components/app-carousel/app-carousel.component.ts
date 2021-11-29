@@ -12,23 +12,37 @@ export class AppCarouselComponent implements OnInit {
   index = 0;
   target = 0;
   lastFrame = 0;
+  velo = 0;
 
   animationFunc: any;
+  swapFunc: any;
 
   constructor() { }
 
   ngOnInit(): void {
     this.animationFunc = setInterval(() => {
-      if (this.carousel)
-        this.carousel.nativeElement.scrollLeft = (this.carousel.nativeElement.scrollLeft - this.target)*0.8 + this.target
+      if (this.carousel) {
+        this.velo -= (this.carousel.nativeElement.scrollLeft - this.target)/40
+        this.velo *= 0.7
+        this.carousel.nativeElement.scrollLeft += this.velo
+        console.log(this.velo)
+      }
     }, 16)
+    this.swapFunc = setTimeout(() => {
+      this.changeImage(1)
+    }, 5000)
   }
 
   ngOnDestroy(): void {
     clearInterval(this.animationFunc)
+    clearInterval(this.swapFunc)
   }
 
   changeImage(x: number): void {
+    clearInterval(this.swapFunc)
+    this.swapFunc = setTimeout(() => {
+      this.changeImage(1)
+    }, 5000)
     if (this.carousel) {
       let children = this.carousel.nativeElement.children;
       let width = children[0].clientWidth

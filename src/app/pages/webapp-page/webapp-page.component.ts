@@ -45,6 +45,7 @@ export class WebappPageComponent implements OnInit {
   data: StatData = {};
   lastUpdatedDate?: Date;
   lastUpdatedDateString: string = "Updating...";
+  error: boolean = false;
   
   timeUpdateFunc: any;
   dataUpdateFunc: any;
@@ -69,6 +70,8 @@ export class WebappPageComponent implements OnInit {
       }
       if (this.loading) 
         this.lastUpdatedDateString = "Updating...";
+      if (this.error) 
+        this.lastUpdatedDateString = "Error fetching data";
       
     }, 100);
   }
@@ -100,8 +103,16 @@ export class WebappPageComponent implements OnInit {
 
   async fetchUsers(): Promise<void> {
     this.loading = true;
-    
-    this.owners = JSON.parse((JSON.stringify(await getJson(this.endpoint + "/owners/get"))));
+    this.error = false;
+    let json;
+    try {
+      json = await getJson(this.endpoint + "/owners/get");
+    } catch (e) {
+      this.loading = false;
+      this.error = true;
+      return
+    }
+    this.owners = JSON.parse((JSON.stringify(json)));
     this.users = Object.keys(this.owners);
     this.selectedUser = this.users[0];
     this.monitors = this.owners[this.selectedUser];
@@ -119,8 +130,14 @@ export class WebappPageComponent implements OnInit {
     if (this.selectedMonitor != undefined) {
       this.lastUpdatedDate = new Date();
       this.loading = true;
-
-      let json = await getJson(this.endpoint + "/monitors/get?monitor_id=" + this.selectedMonitor);
+      let json;
+      try {
+        json = await getJson(this.endpoint + "/monitors/get?monitor_id=" + this.selectedMonitor);
+      } catch (e) {
+        this.loading = false;
+        this.error = true;
+        return
+      }
       this.data = JSON.parse(JSON.stringify(json));
       let props: OtherProps = JSON.parse(JSON.stringify(json));
 
