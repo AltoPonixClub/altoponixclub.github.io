@@ -25,7 +25,6 @@ export class AppCarouselComponent implements OnInit {
         this.velo -= (this.carousel.nativeElement.scrollLeft - this.target)/40
         this.velo *= 0.7
         this.carousel.nativeElement.scrollLeft += this.velo
-        console.log(this.velo)
       }
     }, 16)
     this.swapFunc = setTimeout(() => {

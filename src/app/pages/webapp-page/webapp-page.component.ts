@@ -2,8 +2,13 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { getJson } from '../../utils/api';
 import { short } from "tiny-human-time";
 
+interface Owner {
+  user_id?: string,
+  monitor_ids: string[]
+}
+
 interface OwnerList {
-  [key: string]: string[];
+  [key: string]: Owner;
 }
 
 interface StatTimeStamp {
@@ -90,7 +95,7 @@ export class WebappPageComponent implements OnInit {
   onChangeUser(e: any): void {
     let target = e;
     this.selectedUser = target.options[target.selectedIndex].text;
-    this.monitors = this.owners[this.selectedUser];
+    this.monitors = this.owners[this.selectedUser]["monitor_ids"];
     this.selectedMonitor = this.monitors[0];
     this.getMonitorData();
   }
@@ -115,7 +120,10 @@ export class WebappPageComponent implements OnInit {
     this.owners = JSON.parse((JSON.stringify(json)));
     this.users = Object.keys(this.owners);
     this.selectedUser = this.users[0];
-    this.monitors = this.owners[this.selectedUser];
+    console.log(this.users)
+    console.log(this.owners)
+    this.monitors = this.owners[this.selectedUser]["monitor_ids"];
+
     this.selectedMonitor = this.monitors[0];
     this.loading = false;
 
