@@ -120,8 +120,6 @@ export class WebappPageComponent implements OnInit {
     this.owners = JSON.parse((JSON.stringify(json)));
     this.users = Object.keys(this.owners);
     this.selectedUser = this.users[0];
-    console.log(this.users)
-    console.log(this.owners)
     this.monitors = this.owners[this.selectedUser]["monitor_ids"];
 
     this.selectedMonitor = this.monitors[0];
@@ -149,10 +147,8 @@ export class WebappPageComponent implements OnInit {
       this.data = JSON.parse(JSON.stringify(json));
       let props: OtherProps = JSON.parse(JSON.stringify(json));
 
-      if (props.foliage_feed != "")
-        this.string_props.foliage_feed = props.foliage_feed;
-      if (props.root_stream != "")
-        this.string_props.root_stream = props.root_stream;
+      this.string_props.foliage_feed = props.foliage_feed;
+      this.string_props.root_stream = props.root_stream;
 
       delete this.data["foliage_feed"];
       delete this.data["root_stream"];
