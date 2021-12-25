@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { getJson } from '../../utils/api';
 import { short } from "tiny-human-time";
+import Hls from "hls.js"
 
 interface Owner {
   user_id?: string,
@@ -39,6 +40,7 @@ export class WebappPageComponent implements OnInit {
   @ViewChild('endpoint') endpointRef?: ElementRef;
   @ViewChild('user') userRef?: ElementRef;
   @ViewChild('monitor') monitorRef?: ElementRef;
+  @ViewChild('stream') stream?: ElementRef;
   
   endpoint: string = "https://altoponix-database.herokuapp.com/api/v1";
   owners: OwnerList = {};
@@ -124,7 +126,6 @@ export class WebappPageComponent implements OnInit {
 
     this.selectedMonitor = this.monitors[0];
     this.loading = false;
-
     if (this.monitorRef)
       this.monitorRef.nativeElement.selectedIndex = 0;
     if (this.userRef) 
@@ -149,6 +150,18 @@ export class WebappPageComponent implements OnInit {
 
       this.string_props.foliage_feed = props.foliage_feed;
       this.string_props.root_stream = props.root_stream;
+
+      let video = this.stream?.nativeElement
+      let videoSrc = "https://altoponix-cdn.sfo3.digitaloceanspaces.com/streaming/" + this.selectedMonitor + "/master.m3u8"
+
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }else if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      }
+      video.play()
 
       delete this.data["foliage_feed"];
       delete this.data["root_stream"];
