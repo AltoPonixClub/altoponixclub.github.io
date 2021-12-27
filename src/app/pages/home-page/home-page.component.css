@@ -74,9 +74,10 @@ a:hover {
 }
 
 .section >>> .title {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 32px;
+  font-weight: 600;
   margin-bottom: 10px;
+  line-height: 2em;
 }
 
 .section >>> .subtitle {
@@ -86,19 +87,25 @@ a:hover {
 }
 
 .title-header {
-  font-size: 27px;
-  font-weight: 500;
+  font-size: 45px;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 .subtitle-header {
-  font-size: 18px;
+  font-size: 35px;
   font-weight: 300;
-  line-height: 1.5em;
 }
 
 .paragraph {
+  font-size: 24px;
   margin-bottom: 1em;
+  line-height: 1.5em;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* -ms-transform: translateY(-50%); */
+  /* transform: translateY(35%);  */
+  /* this is scuffed */
 }
 
 .green {
