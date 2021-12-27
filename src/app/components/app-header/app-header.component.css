@@ -116,7 +116,7 @@ app-logo >>> img{
   .link-container-overlay.overlay {
     border-bottom: 1px #ddd solid;
     width: 100vw;
-    height: 260px;
+    height: 320px;
     padding: 10px 50px;
   }
 }

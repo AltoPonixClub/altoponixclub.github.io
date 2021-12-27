@@ -1,0 +1,40 @@
+@media screen and (min-width: 900px){
+  .team-member img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+  .team-member img {
+    width: 500px;
+    height: 500px;
+    margin: 0px;
+    padding: 30px;
+    border-radius: 50%;
+  }
+.team-member-text {
+  align-self: flex-start;
+  align-self: center;
+  padding: 30px;
+}
+h1 {
+  margin: 0px;
+}
+.team-member {
+  padding-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start; /*change to center when it wraps*/
+}
+.team-div {
+  display: block;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+#team-header {
+  text-align: center;
+  font-size: 72px;
+  padding-top: 30px;
+}
