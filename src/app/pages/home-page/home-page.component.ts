@@ -14,4 +14,8 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  route(url: string): void {
+    window.location.href = url;
+  }
+
 }

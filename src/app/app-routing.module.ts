@@ -8,13 +8,15 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { PositionsPageComponent } from './pages/positions-page/positions-page.component';
 import { SubteamsPageComponent } from './pages/subteams-page/subteams-page.component';
 import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
+import { DonationPageComponent } from './pages/donation-page/donation-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'subteams', component: SubteamsPageComponent },
-  { path: 'about', component: AboutPageComponent },
-  { path: 'positions', component: PositionsPageComponent },
-  { path: 'contact', component: ContactPageComponent },
+  // { path: 'subteams', component: SubteamsPageComponent },
+  // { path: 'about', component: AboutPageComponent },
+  // { path: 'positions', component: PositionsPageComponent },
+  // { path: 'contact', component: ContactPageComponent },
+  { path: 'donate', component: DonationPageComponent },
   { path: 'team', component: TeamPageComponent},
   { path: 's2-webapp', component: WebappPageComponent },
   { path: 'feed', redirectTo: '/s2-webapp', pathMatch: 'full' },

@@ -1,4 +1,41 @@
-<app-carousel [carouselImage]="imageURLs"></app-carousel>
-<div class="carousel-text">
-  <div class="subtitle">Building S2</div>
+<div class="jumbotron"> 
+  <div class="header">
+    <div class="gradient content">
+      <div class="title-header">
+        Spend less and grow more with S2
+      </div>
+      <div class="subtitle-header">
+        A novel, fully-automated hydroponics system that grows plants up to 31% faster
+      </div>
+    </div> 
+    <img src="../../../assets/s2mo.png">
+  </div>
+  <div class="section">
+    <div class="content">
+      <div class="title">
+        What is S2?
+      </div>
+      <div class="subtitle">
+        <div class="paragraph">
+          Our robotic system comprises of a lifting and lowering platform
+          elevator which periodically douses the root system of a set of plants
+          in a aqueous nutrient solution while tracking and adjusting the chemical
+          composition of the liquid. We gather meaningful data regarding the state
+          of the plants via a large onboard sensor suite and the utilization of
+          various computer vision and machine learning algorithms for tasks like
+          3D mapping, foliage segmentation, disease detection, and foliage prediction.
+        </div>
+        <div class="paragraph">
+          Furthermore, we have a webapp which allows us to continuously monitor the 
+          key parameters of the system. Other aspects of our project include the full
+          3d design of the mechanical elevator of our system,
+          system electronics, mechanism control theory, and more.
+        </div>
+        <div class="paragraph">
+          We are a fully student led team trying to bring this project to fruition. With your help, we can .......
+        </div>
+      </div>
+      <button (click)="route('/donate')">Donate</button>
+    </div>
+  </div>
 </div>
