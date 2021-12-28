@@ -1,1 +1,65 @@
-<p>sponsor-page works!</p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="header">
+      <div class="gradient">
+        <div class="content">
+          <div class="title">
+            Support Us
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="section">
+      <div class="title">
+        Help Support Us!
+      </div>
+      <div class="subtitle">
+        <div class="paragraph">
+          Here's why you should support us.....
+        </div>
+        <div class="paragraph">
+          And here are some of our benefits...
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="section green">
+        <div class="title">
+          Choose a donation amount...
+        </div>
+        <div class="subtitle">
+          <div class="paragraph">
+            More Text Here...
+          </div>
+        </div>
+      </div>
+      <div class="section gray">
+        <div class="title">
+          Or contact us for sponsor
+        </div>
+        <div class="subtitle">
+          <div class="paragraph">
+            More Text Here...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!--edit these in the ts file-->
+  <div class="donations">
+    <div class="title">
+      Benefits:
+    </div>
+    <div class="tier" *ngFor="let tier of tiers">
+      <div class="amount">
+        ${{tier.amount}}
+      </div>
+      <hr>
+      <div class="benefits">
+        <div class="benefit" *ngFor="let benefit of tier['benefits']">
+          {{benefit}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

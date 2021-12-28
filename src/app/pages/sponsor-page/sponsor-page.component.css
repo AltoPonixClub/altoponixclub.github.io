@@ -1,0 +1,219 @@
+.jumbotron {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.gradient{
+  background:
+          linear-gradient(127deg, rgba(102, 173, 112, 0.8), rgba(74, 148, 72, 0) 12.35%),
+          linear-gradient(336deg, rgba(56, 189, 138, 0.8), rgba(134, 179, 52, 0) 25.25%),
+          linear-gradient(83deg, rgba(74, 204, 187, 0.8), rgba(57, 214, 117, 0) 50.63%),
+          linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
+          linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
+  background-size: 400% 400%;
+  display: flex;
+  color:black;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  overflow: hidden;
+  background-color: white;
+  flex-direction: row;
+  width: 100vw;
+}
+
+@-webkit-keyframes Gradient {
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+@-moz-keyframes Gradient {
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+@keyframes Gradient { 
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.header .content {
+  flex: 1 0 auto;
+  width: 50%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header >>> .title {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section {
+  background-color: white;
+  padding: 5%;
+}
+
+.section .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.section >>> .title {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section >>> .subtitle {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.donations {
+  border-left: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  position: fixed;
+  right: 0;
+  height: 90%;
+  overflow: auto;
+}
+
+.donations >>> .title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.tier {
+  background-color: rgb(243, 248, 238);
+  border: 1px solid rgb(216, 248, 184);
+  padding: 15px;
+  height: 200px;
+  margin: 10px 0px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+}
+
+.tier hr {
+  margin: 5px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+
+.amount {
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.paragraph {
+  margin-bottom: 1em;
+  line-height: 1.5em;
+}
+
+button {
+  border-radius: 15px;
+  border: 1px #ddd solid;
+  background-color: rgb(27, 177, 119);
+  color:white;
+  width: 120px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: 300;
+  transition: ease-out;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  margin-top: 10px;
+}
+
+button:hover{
+  background-color: rgb(65, 216, 158);
+} 
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gray {
+  background-color: rgb(236, 236, 236);
+}
+
+.green {
+  background-color: rgb(243, 248, 238);
+}
+
+.centered  {
+  text-align: center;
+}
+
+@media (max-width: 2000px) {
+  .section >>> .title {
+    font-size: 40px;
+  }
+  .section >>> .subtitle {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .section >>> .title {
+    font-size: 30px;
+  }
+  .section >>> .subtitle {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+  .section >>> .subtitle {
+    font-size: 22px;
+  }
+  .section >>> img {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 750px) {
+  .section >>> .subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  .section .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section >>> img {
+    margin: 20px 0px;
+  }
+}
+
