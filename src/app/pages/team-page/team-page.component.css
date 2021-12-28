@@ -1,40 +1,63 @@
-@media screen and (min-width: 900px){
-  .team-member img {
-    width: 200px !important;
-    height: 200px !important;
-  }
+.team-member img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 50%;
 }
-  .team-member img {
-    width: 500px;
-    height: 500px;
-    margin: 0px;
-    padding: 30px;
-    border-radius: 50%;
-  }
 .team-member-text {
-  align-self: flex-start;
-  align-self: center;
-  padding: 30px;
-}
-h1 {
-  margin: 0px;
+  width: 250px;
 }
 .team-member {
-  padding-bottom: 30px;
-  padding-left: 50px;
-  padding-right: 50px;
-  width: 100%;
+  padding: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.section-members {
   display: flex;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  justify-content: start; /*change to center when it wraps*/
 }
 .team-div {
   display: block;
+}
+.section-header {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 48px;
+}
+/*.team-div {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr 2fr 1fr 2fr 1fr 2fr;
+  grid-template-areas: 
+  "lead-title  lead-title  lead-title"
+  "lead-member lead-member lead-member"
+  "sw-title  sw-title  sw-title"
+  "sw-member sw-member sw-member"
+  "sw-member sw-member sw-member"
+  "prod-title  prod-title  prod-title"
+  "prod-member prod-member prod-member"
+  "prod-member prod-member prod-member"
+  "op-title  op-title  op-title"
+  "op-member op-member op-member"
+  "op-member op-member op-member"
+  "res-title  res-title  res-title"
+  "res-member res-member res-member"
+  "res-member res-member res-member";
   padding-top: 0px;
   margin-top: 0px;
-}
-#team-header {
-  text-align: center;
+}*/
+#team-header-text {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  left: 50px;
   font-size: 72px;
-  padding-top: 30px;
+}
+#team-header{
+  position: relative;
+}
+#team-header-image{
+  overflow-x: hidden;
+  float: center;
 }
