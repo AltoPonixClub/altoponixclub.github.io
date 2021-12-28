@@ -1,4 +1,4 @@
-.jumbotron{
+.jumbotron {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -44,6 +44,7 @@ a {
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
 }
+
 a:hover {
   color:#40b1e6;
 }
@@ -53,8 +54,27 @@ a:hover {
   padding: 5%;
 }
 
-.centered  {
-  text-align: center;
+.section .content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.section >>> .title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section >>> .subtitle {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.section >>> img {
+  object-fit: contain;
+  width: 180px;
 }
 
 .header {
@@ -76,29 +96,6 @@ a:hover {
   justify-content: center;
 }
 
-.section .content {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: row;
-}
-
-.section >>> .title {
-  font-size: 34px;
-  font-weight: 600;
-  line-height: 2em;
-}
-
-.section >>> .subtitle {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.5em;
-}
-
-.section >>> img {
-  object-fit: contain;
-  width: 180px;
-}
-
 .title-header {
   font-size: 5vw;
   font-weight: 700;
@@ -113,10 +110,6 @@ a:hover {
 .paragraph {
   margin-bottom: 1em;
   line-height: 1.5em;
-}
-
-.green {
-  background-color: rgb(243, 248, 238);
 }
 
 button {
@@ -138,6 +131,22 @@ button:hover{
   background-color: rgb(65, 216, 158);
 } 
 
+.green {
+  background-color: rgb(243, 248, 238);
+}
+
+.centered  {
+  text-align: center;
+}
+
+@media (max-width: 1900px) {
+  .section >>> .title {
+    font-size: 34px;
+  }
+  .section >>> .subtitle {
+    font-size: 15px;
+  }
+}
 
 @media (max-width: 1200px) {
   .jumbotron{
