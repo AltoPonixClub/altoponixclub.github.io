@@ -17,6 +17,7 @@ import { AppGraphComponent } from './components/app-graph/app-graph.component';
 import { ChartModule } from 'angular-highcharts';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
+import { AppFooterComponent } from './components/app-footer/app-footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.componen
     AppCarouselComponent,
     AppGraphComponent,
     TeamPageComponent,
-    SponsorPageComponent
+    SponsorPageComponent,
+    AppFooterComponent
   ],
   imports: [
     BrowserModule,

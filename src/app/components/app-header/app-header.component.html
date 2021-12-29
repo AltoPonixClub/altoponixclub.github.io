@@ -11,17 +11,13 @@
     {{overlay ? "≡" : "╳"}}
   </button>
   <div class="link-container" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
-    <div class="link" (click)="route('/about')">About</div>
     <div class="link" (click)="route('/team')">Team</div>
     <div class="link" (click)="route('/sponsor')">Sponsor</div>
-    <div class="link" (click)="route('/contact')">Contact</div>
   </div>
 </div>
 <div *ngIf="!disablelinks">
   <div class="link-container-overlay" [ngClass]="{' overlay': !overlay}">
-    <div class="link" (click)="route('/about')">About</div>
     <div class="link" (click)="route('/team')">Team</div>
     <div class="link" (click)="route('/sponsor')">Sponsor</div>
-    <div class="link" (click)="route('/contact')">Contact</div>
   </div>
 </div>
