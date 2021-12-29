@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { loadScript } from "@paypal/paypal-js";
 
 interface DonationTier {
   amount: number;
@@ -47,5 +48,4 @@ export class SponsorPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
