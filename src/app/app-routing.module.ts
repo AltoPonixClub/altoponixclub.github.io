@@ -13,7 +13,7 @@ import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.componen
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   // { path: 'subteams', component: SubteamsPageComponent },
-  // { path: 'about', component: AboutPageComponent },
+  { path: 'about', component: HomePageComponent },
   // { path: 'positions', component: PositionsPageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'sponsor', component: SponsorPageComponent },
