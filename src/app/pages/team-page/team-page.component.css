@@ -1,3 +1,4 @@
+
 .team-member img {
   width: 200px;
   height: 200px;
@@ -18,7 +19,7 @@
   flex-wrap: wrap;
 }
 .team-div {
-  margin-top: 300px;
+  margin-top: 75px;
   position: relative;
   display: block;
 }
@@ -65,4 +66,104 @@
 #team-header-image{
   overflow-x: hidden;
   float: center;
+}
+
+.jumbotron {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.gradient{
+  background:
+          linear-gradient(127deg, rgba(102, 173, 112, 0.8), rgba(74, 148, 72, 0) 12.35%),
+          linear-gradient(336deg, rgba(56, 189, 138, 0.8), rgba(134, 179, 52, 0) 25.25%),
+          linear-gradient(83deg, rgba(74, 204, 187, 0.8), rgba(57, 214, 117, 0) 50.63%),
+          linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
+          linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
+  background-size: 400% 400%;
+  display: flex;
+  color:black;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  overflow: hidden;
+  background-color: white;
+  flex-direction: row;
+  width: 100vw;
+}
+
+@-webkit-keyframes Gradient {
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+@-moz-keyframes Gradient {
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+@keyframes Gradient { 
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+.header .content {
+  flex: 1 0 auto;
+  width: 50%;
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header >>> .title {
+  font-size: 3vw;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section {
+  background-color: white;
+  padding: 3% 5%;
+}
+
+.section .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.section >>> .title {
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section >>> .subtitle {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.link { color: #32a891; }
+
+.paragraph {
+  font-size: 24px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-left: 2em;
+  line-height: 1.5em;
 }
