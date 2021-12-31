@@ -39,7 +39,7 @@ export class SponsorPageComponent implements OnInit {
     },
     {
       amount: 5, 
-      benefits: ["Our Appreciation"],
+      benefits: ["Our appreciation"],
       tier: "blue"
     },
   ]
