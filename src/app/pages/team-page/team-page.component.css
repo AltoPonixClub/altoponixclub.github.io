@@ -1,3 +1,73 @@
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+.team-member-text {
+  width: 250px;
+}
+.team-member {
+  padding: 30px;
+  display: inline-block;
+  text-align: center;
+}
+.section-members {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.team-div {
+  margin-top: 75px;
+  position: relative;
+  display: block;
+}
+.section-header {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 48px;
+}
+/*.team-div {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr 2fr 1fr 2fr 1fr 2fr;
+  grid-template-areas: 
+  "lead-title  lead-title  lead-title"
+  "lead-member lead-member lead-member"
+  "sw-title  sw-title  sw-title"
+  "sw-member sw-member sw-member"
+  "sw-member sw-member sw-member"
+  "prod-title  prod-title  prod-title"
+  "prod-member prod-member prod-member"
+  "prod-member prod-member prod-member"
+  "op-title  op-title  op-title"
+  "op-member op-member op-member"
+  "op-member op-member op-member"
+  "res-title  res-title  res-title"
+  "res-member res-member res-member"
+  "res-member res-member res-member";
+  padding-top: 0px;
+  margin-top: 0px;
+}*/
+#team-header-text {
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  left: 50px;
+  font-size: 72px;
+}
+#team-header{
+  position: absolute;
+  width: 100vw;
+  height: 300px;
+  background-color: #6dd184;
+}
+#team-header-image{
+  overflow-x: hidden;
+  float: center;
+}
+
 .jumbotron {
   display: flex;
   flex-direction: row;

@@ -1,62 +1,61 @@
 .container {
-  height: 80px;
+  height: 120px;
   width: 100%;
   background-color: white;
   border-bottom: 1px #ddd solid;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 5%;
   padding-right: 5%;
-  display:flex;
-  position:fixed;
-  top:0px;
+  display: flex;
+  position: fixed;
+  top: 0px;
   z-index: 100;
 }
-.title{
+.title {
   margin-left: 15px;
-  font-size: 32px;
+  font-size: 50px;
   font-weight: 300;
   float: right;
 }
 app-logo >>> img{
   position: relative;
   top: 5px;
-  height:50px;
+  height: 70px;
 }
 .spacing{
   flex: 1 0 auto;
 }
 .container-spacing {
-  height: 80px;
+  height: 120px;
   width: 100vw;
   background-color: white;
   position: relative;
   opacity: 0;
 }
-.link{
+.link {
   font-weight: 200;
   margin-right: 20px;
-  font-size: 18px;
+  font-size: 30px;
   transition: cubic-bezier(.23, 1, .32, 1);
   transition-duration: 0.3s;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -webkit-user-drag: none;
+  float: left;
+  height: 100%;
+  line-height: 80px;
+  color:black;
+  text-decoration: none !important;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(.25, .15, 0, .94);
+  transition-property: color, font-size;
 }
 .title-container {
   flex: 1 0 auto;
 }
 .link-container {
   overflow: hidden;
-}
-.link {
-  float: left;
-  height: 100%;
-  line-height: 60px;
-  color:black;
-  text-decoration: none !important;
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(.25, .15, 0, .94);
 }
 .link:hover { 
   color:#999;
@@ -80,12 +79,12 @@ app-logo >>> img{
 .overlay-button.overlay {
   font-size: 20px;
 }
-.link-container-overlay{
+.link-container-overlay {
   display: flex;
   position: fixed;
   overflow: hidden;
   flex-direction: column;
-  background-color:white;
+  background-color: #f6f6f6;
   border-bottom: 0px #ddd solid;
   padding: 0px 50px;
   top: 80px;
@@ -95,6 +94,70 @@ app-logo >>> img{
   transition-duration: 0.3s;
   transition-property: height, padding;
 }
+
+@media (max-width: 2000px) {
+  .container {
+    height: 100px;
+    padding-top: 15px;
+  }
+  .container-spacing {
+    height: 100px;
+  }
+  .title {
+    font-size: 40px;
+    margin-left: 15px;
+  }
+  app-logo >>> img{
+    height: 60px;
+  }
+  .link {
+    line-height: 70px;
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .container {
+    height: 80px;
+    padding-top: 10px;
+  }
+  .container-spacing {
+    height: 80px;
+  }
+  .title {
+    font-size: 32px;
+    margin-left: 15px;
+  }
+  app-logo >>> img{
+    height: 50px;
+  }
+  .link {
+    line-height: 60px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    height: 80px;
+    padding-top: 10px;
+  }
+  .container-spacing {
+    height: 80px;
+  }
+  .title {
+    font-size: 32px;
+    margin-left: 15px;
+  }
+  app-logo >>> img{
+    height: 50px;
+  }
+  .link {
+    line-height: 60px;
+    font-size: 18px;
+  }
+}
+
 @media (max-width: 750px) {
   .overlay-button {
     display: block;
@@ -116,7 +179,41 @@ app-logo >>> img{
   .link-container-overlay.overlay {
     border-bottom: 1px #ddd solid;
     width: 100vw;
-    height: 260px;
+    height: 200px;
+    padding: 10px 50px;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    height: 60px;
+    padding-top: 10px;
+  }
+  .container-spacing {
+    height: 60px;
+  }
+  .title {
+    font-size: 25px;
+    margin-left: 10px;
+  }
+  app-logo >>> img{
+    height: 30px;
+  }
+  .link {
+    line-height: 40px;
+  }
+  .overlay-button {
+    height: 40px;
+    width: 40px;
+    margin-top: 0px;
+  }
+  .link-container-overlay { 
+    top: 60px;
+  }
+  .link-container-overlay.overlay {
+    border-bottom: 1px #ddd solid;
+    width: 100vw;
+    height: 160px;
     padding: 10px 50px;
   }
 }

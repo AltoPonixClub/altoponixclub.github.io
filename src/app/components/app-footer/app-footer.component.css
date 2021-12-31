@@ -1,0 +1,20 @@
+.container {
+  background-color: #eee;
+  padding: 2% 5%;
+  display: flex;
+  justify-content: center;
+  color: #999;
+  flex-direction: column;
+  border-top: 1px solid #ccc;
+  font-size: 1.3vw;
+}
+
+a {
+  color: #999;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+a:hover {
+  color: #ccc;
+}
