@@ -7,14 +7,32 @@
 }
 
 .team-member-text {
-  width: 250px;
+  width: 20vw;
+  min-width: 200px;
 }
 
 .team-member {
-  padding: 30px;
+  margin: 1vw 4vw 1vw 4vw;
+  padding: 2vw;
+  border-radius: 1vw;
+  display: inline-block;
   text-align: center;
 }
-
+hr {
+  width: calc(350px + 10vw);
+  margin: auto;
+}
+.team-member:hover {
+  background-color: #ccc;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+}
+.team-member:hover >>> .detail{
+  display: block;
+}
+.detail {
+  display: none;
+}
 .section-members {
   display: flex;
   justify-content: space-evenly;
