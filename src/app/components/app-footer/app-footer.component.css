@@ -6,6 +6,7 @@
   color: #999;
   flex-direction: column;
   border-top: 1px solid #ccc;
+  font-size: 1.3vw;
 }
 
 a {

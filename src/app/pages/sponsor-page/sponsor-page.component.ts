@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { loadScript } from "@paypal/paypal-js";
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 interface DonationTier {
   amount: number;
   benefits: string[];
+  tier: string;
 }
 
 @Component({
@@ -15,37 +15,56 @@ export class SponsorPageComponent implements OnInit {
 
   tiers: DonationTier[] = [
     {
-      amount: 1, 
-      benefits: ["You get a free sticker!!!"]
+      amount: 1000, 
+      benefits: [
+        "Name placed most prominently on plaque on our system",
+        "Name placed most prominently on donor list on our website",
+        "All below benefits",
+      ],
+      tier: "gold"
+    },
+    {
+      amount: 500, 
+      benefits: [
+        "Name placed on a plaque on our system",
+        "Name on all promotional materials",
+        "All below benefits",
+      ],
+      tier: "silver",
+    },
+    {
+      amount: 75, 
+      benefits: ["Name placed on donor list on our website"],
+      tier: "green"
     },
     {
       amount: 5, 
-      benefits: ["You get a 2 free stickers!!!"]
+      benefits: ["Our appreciation"],
+      tier: "blue"
     },
-    {
-      amount: 10, 
-      benefits: ["We will ship a lettuce to your house, Personally"]
-    },
-    {
-      amount: 50, 
-      benefits: ["We will donate $2 to teamtrees"]
-    },
-    {
-      amount: 100, 
-      benefits: ["You will get a free $100","And you will also get $100 debt"]
-    },
-    {
-      amount: 1000, 
-      benefits: ["You will own Altoponix","That's it","No more"]
-    },
-    {
-      amount: 280000000000, 
-      benefits: ["elon musk"]
-    }
   ]
+
+  @ViewChild("bar") bar?: ElementRef;
+
+  barAnimationFunc: any
+
+  moneyAmount = 0
+  displayMoney = 0
+  displayMoneyRounded = 0
 
   constructor() { }
 
   ngOnInit(): void {
+    this.barAnimationFunc = setInterval(() => {
+      this.displayMoney = 0.2*(this.moneyAmount-this.displayMoney) + this.displayMoney
+      this.displayMoneyRounded = Math.round(this.displayMoney*100)/100
+      if (this.bar) {
+        this.bar.nativeElement.style.width = this.moneyAmount/50 + "%"
+      }
+    }, 16)
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.barAnimationFunc)
   }
 }

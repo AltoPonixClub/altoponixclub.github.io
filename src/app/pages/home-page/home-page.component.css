@@ -75,7 +75,7 @@ a:hover {
 
 .section >>> img {
   object-fit: contain;
-  width: 180px;
+  width: 350px;
 }
 
 .header {
@@ -114,13 +114,13 @@ a:hover {
 }
 
 button {
-  border-radius: 15px;
+  border-radius: 10vw;
   border: 1px #ddd solid;
   background-color: rgb(27, 177, 119);
   color:white;
-  width: 120px;
-  height: 35px;
-  font-size: 16px;
+  width: 240px;
+  height: 70px;
+  font-size: 32px;
   font-weight: 300;
   transition: ease-out;
   transition-duration: 0.3s;
@@ -152,6 +152,14 @@ button:hover{
   .section >>> .subtitle {
     font-size: 22px;
   }
+  .section >>> img {
+    width: 300px;
+  }
+  button {
+    width: 208px;
+    height: 60px;
+    font-size: 29px;
+  }
 }
 
 @media (max-width: 1600px) {
@@ -159,6 +167,14 @@ button:hover{
     font-size: 34px;
   }
   .section >>> .subtitle {
+    font-size: 15px;
+  }
+  .section >>> img {
+    width: 220px;
+  }
+  button {
+    width: 120px;
+    height: 35px;
     font-size: 15px;
   }
 }
@@ -178,20 +194,43 @@ button:hover{
   .section >>> img {
     margin: 0 10px;
   }
+  .section >>> img {
+    width: 260px;
+  }
+  button {
+    width: 154px;
+    height: 45px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 750px) {
   .section >>> .subtitle {
     font-size: 18px;
   }
+  .section >>> img {
+    width: 200px;
+  }
+  button {
+    width: 120px;
+    height: 35px;
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 450px) {
-  .section .content {
-    flex-direction: column;
-    align-items: center;
+  .section >>> .subtitle {
+    font-size: 14px;
   }
   .section >>> img {
     margin: 20px 0px;
+  }
+  .section >>> img {
+    width: 150px;
+  }
+  button {
+    width: 86px;
+    height: 25px;
+    font-size: 12px;
   }
 }
