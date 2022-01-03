@@ -113,6 +113,12 @@ a:hover {
   line-height: 1.5em;
 }
 
+.caption {
+  font-size: 0.7vw;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.5em;
+}
 button {
   border-radius: 10vw;
   border: 1px #ddd solid;
