@@ -1,4 +1,4 @@
-.container {
+.header-container {
   height: 120px;
   width: 100%;
   background-color: white;
@@ -96,7 +96,7 @@ app-logo >>> img{
 }
 
 @media (max-width: 2000px) {
-  .container {
+  .header-container {
     height: 100px;
     padding-top: 15px;
   }
@@ -117,7 +117,7 @@ app-logo >>> img{
 }
 
 @media (max-width: 1600px) {
-  .container {
+  .header-container {
     height: 80px;
     padding-top: 10px;
   }
@@ -138,7 +138,7 @@ app-logo >>> img{
 }
 
 @media (max-width: 1200px) {
-  .container {
+  .header-container {
     height: 80px;
     padding-top: 10px;
   }
@@ -185,7 +185,7 @@ app-logo >>> img{
 }
 
 @media (max-width: 450px) {
-  .container {
+  .header-container {
     height: 60px;
     padding-top: 10px;
   }

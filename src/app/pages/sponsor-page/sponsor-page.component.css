@@ -1,10 +1,10 @@
-.jumbotron {
+.sponsor-jumbotron {
   display: flex;
   flex-direction: row;
   overflow: hidden;
 }
 
-.container {
+.sponsor-container {
   display: flex;
   flex-direction: column;
   width: 80vw;
@@ -332,7 +332,7 @@ a {
   #benefits-section {
     display: block;
   }
-  .container {
+  .sponsor-container {
     width: 100vw;
   }
   .section >>> .title {
