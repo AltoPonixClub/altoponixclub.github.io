@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,12 @@ import { ChartModule } from 'angular-highcharts';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -39,10 +47,18 @@ import { AppFooterComponent } from './components/app-footer/app-footer.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ChartModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, WebappPageComponent]
 })
 export class AppModule { }

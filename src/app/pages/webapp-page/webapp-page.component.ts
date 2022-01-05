@@ -2,6 +2,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { getJson } from '../../utils/api';
 import { short } from "tiny-human-time";
 import Hls from "hls.js"
+import { User } from '../../user';
+import { LoginService } from '../../login.service';
 
 interface Owner {
   user_id?: string,
@@ -36,6 +38,8 @@ interface OtherProps {
   styleUrls: ['./webapp-page.component.css']
 })
 export class WebappPageComponent implements OnInit {
+  userModel = new User('', '');
+  notSubmitted: boolean = true;
 
   @ViewChild('endpoint') endpointRef?: ElementRef;
   @ViewChild('user') userRef?: ElementRef;
@@ -53,13 +57,15 @@ export class WebappPageComponent implements OnInit {
   lastUpdatedDate?: Date;
   lastUpdatedDateString: string = "Updating...";
   error: boolean = false;
-  
+  firstNameAutofilled: boolean = false;
+  lastNameAutofilled: boolean = false;
+
   timeUpdateFunc: any;
   dataUpdateFunc: any;
 
   string_props: OtherProps = {foliage_feed: "-",root_stream: "-"};
 
-  constructor() { }
+  constructor(private _loginService: LoginService) { }
 
   ngOnInit(): void {
     this.fetchUsers();
@@ -169,4 +175,14 @@ export class WebappPageComponent implements OnInit {
       this.loading = false;
     }
   }
+
+  onSubmit() {
+    this.notSubmitted = false;
+    this._loginService.login(this.userModel)
+      .subscribe(
+        data => console.log('Success', data),
+        error => console.log('Error', error)
+      )
+  }
+
 }

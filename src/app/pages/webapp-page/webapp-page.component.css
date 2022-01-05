@@ -63,3 +63,7 @@ app-graph {
 video {
   width: 900px;
 }
+
+mat-form-field {
+  margin-right: 12px;
+}
