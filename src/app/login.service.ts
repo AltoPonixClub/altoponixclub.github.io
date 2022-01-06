@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user'
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-
-  _url = '';
+  
+  _url = 'http://127.0.0.1:5000/api/v1/login/user';
   constructor(private _http: HttpClient) { }
 
   login(user: User) {
-    return this._http.post<any>(this._url, user);
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this._http.post<any>(this._url, JSON.stringify(user), {headers: headers});
   }
 }
