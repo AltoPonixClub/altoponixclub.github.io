@@ -75,7 +75,8 @@ a:hover {
 
 .section >>> img {
   object-fit: contain;
-  width: 350px;
+  max-width: 500px;
+  max-height: 300px;
 }
 
 .header {
@@ -114,7 +115,7 @@ a:hover {
 }
 
 .caption {
-  font-size: 0.7vw;
+  font-size: 17px;
   margin-top: 1em;
   margin-bottom: 1em;
   line-height: 1.5em;
@@ -159,12 +160,16 @@ button:hover{
     font-size: 22px;
   }
   .section >>> img {
-    width: 300px;
+    max-width: 500px;
+    max-height: 300px;
   }
   button {
     width: 208px;
     height: 60px;
     font-size: 29px;
+  }
+  .caption {
+    font-size: 14px;
   }
 }
 
@@ -176,12 +181,16 @@ button:hover{
     font-size: 15px;
   }
   .section >>> img {
-    width: 220px;
+    max-width: 400px;
+    max-height: 220px;
   }
   button {
     width: 120px;
     height: 35px;
     font-size: 15px;
+  }
+  .caption {
+    font-size: 12px;
   }
 }
 
@@ -195,32 +204,40 @@ button:hover{
     align-items: center;
   }
   .section >>> .subtitle {
-    font-size: 22px;
+    font-size: 20px;
   }
   .section >>> img {
     margin: 0 10px;
   }
   .section >>> img {
-    width: 260px;
+    max-width: 300px;
+    max-height: 300px;
   }
   button {
     width: 154px;
     height: 45px;
     font-size: 20px;
   }
+  .caption {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 750px) {
   .section >>> .subtitle {
-    font-size: 18px;
+    font-size: 17px;
   }
   .section >>> img {
-    width: 200px;
+    max-width: 220px;
+    max-height: 150px;
   }
   button {
     width: 120px;
     height: 35px;
     font-size: 15px;
+  }
+  caption {
+    font-size: 8px;
   }
 }
 
@@ -232,7 +249,8 @@ button:hover{
     margin: 20px 0px;
   }
   .section >>> img {
-    width: 150px;
+    max-width: 120px;
+    max-height: 100px;
   }
   button {
     width: 86px;
