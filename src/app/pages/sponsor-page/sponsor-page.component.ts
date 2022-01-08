@@ -48,7 +48,7 @@ export class SponsorPageComponent implements OnInit {
 
   barAnimationFunc: any
 
-  moneyAmount = 0
+  moneyAmount = 100
   displayMoney = 0
   displayMoneyRounded = 0
 
