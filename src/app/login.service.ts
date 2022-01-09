@@ -12,6 +12,7 @@ export class LoginService {
 
   login(user: User) {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    localStorage.setItem('currentUser', JSON.stringify(user));
     return this._http.post<any>(this._url, JSON.stringify(user), {headers: headers});
   }
 }

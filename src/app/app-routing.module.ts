@@ -9,6 +9,8 @@ import { PositionsPageComponent } from './pages/positions-page/positions-page.co
 import { SubteamsPageComponent } from './pages/subteams-page/subteams-page.component';
 import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -18,7 +20,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'sponsor', component: SponsorPageComponent },
   { path: 'team', component: TeamPageComponent},
-  { path: 's2-webapp', component: WebappPageComponent },
+  { path: 's2-webapp', component: WebappPageComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginPageComponent},
   { path: 'feed', redirectTo: '/s2-webapp', pathMatch: 'full' },
   { path: 'data', redirectTo: '/s2-webapp', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

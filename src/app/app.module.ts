@@ -25,7 +25,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MatInputModule } from '@angular/material/input';
     AppGraphComponent,
     TeamPageComponent,
     SponsorPageComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent, WebappPageComponent]
 })
 export class AppModule { }
