@@ -94,6 +94,17 @@ app-logo >>> img{
   transition-duration: 0.3s;
   transition-property: height, padding;
 }
+.vert {
+  float: left;
+  border-left: 1px solid #ccc;
+  height: 70px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.horz {
+  border-top: 1px solid #ddd;
+}
 
 @media (max-width: 2000px) {
   .container {
@@ -113,6 +124,9 @@ app-logo >>> img{
   .link {
     line-height: 70px;
     font-size: 25px;
+  }
+  .vert {
+    height: 55px;
   }
 }
 
@@ -134,6 +148,9 @@ app-logo >>> img{
   .link {
     line-height: 60px;
     font-size: 18px;
+  }
+  .vert {
+    height: 40px;
   }
 }
 
@@ -179,8 +196,11 @@ app-logo >>> img{
   .link-container-overlay.overlay {
     border-bottom: 1px #ddd solid;
     width: 100vw;
-    height: 200px;
+    height: 320px;
     padding: 10px 50px;
+  }
+  .vert {
+    height: 0px;
   }
 }
 
@@ -213,7 +233,7 @@ app-logo >>> img{
   .link-container-overlay.overlay {
     border-bottom: 1px #ddd solid;
     width: 100vw;
-    height: 160px;
+    height: 200px;
     padding: 10px 50px;
   }
 }

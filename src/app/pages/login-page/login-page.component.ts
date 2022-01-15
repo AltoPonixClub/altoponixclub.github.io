@@ -140,7 +140,7 @@ export class LoginPageComponent implements OnInit {
       gl.useProgram(program!);
 
       const tick = (time: number) => {
-        gl.clearColor(1,0,0,1);
+        gl.clearColor(1,1,1,1);
         gl.clear(gl.COLOR_BUFFER_BIT)
         let positionLocation = gl.getAttribLocation(program!, "a_position");
         gl.enableVertexAttribArray(positionLocation);
