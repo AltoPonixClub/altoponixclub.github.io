@@ -1,39 +1,15 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { getJson } from '../../utils/api';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { short } from "tiny-human-time";
 import Hls from "hls.js"
-
-interface Owner {
-  user_id?: string,
-  monitor_ids: string[]
-}
-
-interface OwnerList {
-  [key: string]: Owner;
-}
-
-interface StatTimeStamp {
-  [key: string]: number;
-}
-
-interface StatisticGraph {
-  value: number | null
-  history: StatTimeStamp
-}
-
-interface StatData {
-  [key: string]: StatisticGraph;
-}
-
-interface OtherProps {
-  foliage_feed: string,
-  root_stream: string,
-}
+import { BackendDataService, StatisticGraph, UserData } from 'src/app/services/backend/backenddata/backenddata.service';
+import { BackendBaseService } from 'src/app/services/backend/backendbase/backendbase.service';
+import { BackendLoginService } from 'src/app/services/backend/backendlogin/backendlogin.service';
 
 @Component({
   selector: 'app-webapp-page',
   templateUrl: './webapp-page.component.html',
-  styleUrls: ['./webapp-page.component.css']
+  styleUrls: ['./webapp-page.component.css'],
+  providers: [BackendDataService]
 })
 export class WebappPageComponent implements OnInit {
 
@@ -41,15 +17,20 @@ export class WebappPageComponent implements OnInit {
   @ViewChild('user') userRef?: ElementRef;
   @ViewChild('monitor') monitorRef?: ElementRef;
   @ViewChild('stream') stream?: ElementRef;
+  @ViewChild('icon') icon?: ElementRef;
+  @ViewChild('drop') drop?: ElementRef;
   
   endpoint: string = "https://altoponix-database.herokuapp.com/api/v1";
-  owners: OwnerList = {};
+
   users: string[] = [];
   monitors: string[] = [];
   selectedUser: string = "";
   selectedMonitor: string = "";
+
+  monitorData: {[key: string]: StatisticGraph} = {};
+  string_props: {[key: string]: string} = {foliage_feed: "-",root_stream: "-"};
+
   loading: boolean = false;
-  data: StatData = {};
   lastUpdatedDate?: Date;
   lastUpdatedDateString: string = "Updating...";
   error: boolean = false;
@@ -57,15 +38,34 @@ export class WebappPageComponent implements OnInit {
   timeUpdateFunc: any;
   dataUpdateFunc: any;
 
-  string_props: OtherProps = {foliage_feed: "-",root_stream: "-"};
+  dropdown: boolean = false;
+
+  token = ""
+  username = ""
+  user_id = ""
 
   constructor() { }
 
   ngOnInit(): void {
-    this.fetchUsers();
+
+    let s = window.sessionStorage;
+    let l = window.localStorage;
+    this.token = s.getItem("token") ?? l.getItem("token") ?? ""
+    this.username = s.getItem("username") ?? l.getItem("username") ?? ""
+    this.user_id = s.getItem("user_id") ?? l.getItem("user_id") ?? ""
+
+    if (this.token == "") 
+      return this.deAuth()
+
+    // Start BackendDataService
+    this.load()
+
+    //Fetch every 15 seconds
     this.dataUpdateFunc = setInterval(() => {
       this.getMonitorData()
     }, 15000);
+
+    //Update time text
     this.timeUpdateFunc = setInterval(() => {
       if (this.lastUpdatedDate != undefined){
         let str: string = short(Date.now(), this.lastUpdatedDate);
@@ -83,90 +83,123 @@ export class WebappPageComponent implements OnInit {
     }, 100);
   }
 
-  ngOnDestroy(): void {
-    clearInterval(this.timeUpdateFunc);
-    clearInterval(this.dataUpdateFunc);
-  }
-
-  onChangeEndpoint(e: any): void {
-    let target = e;
-    this.endpoint = target.options[target.selectedIndex].text;
-    this.fetchUsers();
-  }
-
-  onChangeUser(e: any): void {
-    let target = e;
-    this.selectedUser = target.options[target.selectedIndex].text;
-    this.monitors = this.owners[this.selectedUser]["monitor_ids"];
-    this.selectedMonitor = this.monitors[0];
-    this.getMonitorData();
-  }
-
-  onChangeMonitor(e: any): void {
-    let target = e;
-    this.selectedMonitor = target.options[target.selectedIndex].text;
-    this.getMonitorData();
-  }
-
-  async fetchUsers(): Promise<void> {
-    this.loading = true;
-    this.error = false;
-    let json;
+  async load() {
+    if (!await BackendLoginService.verify(this.user_id, this.token))
+      this.deAuth();
     try {
-      json = await getJson(this.endpoint + "/owners/get");
-    } catch (e) {
-      this.loading = false;
-      this.error = true;
-      return
+      let userData = await BackendDataService.getAllUserData(this.token)
+      this.users = Object.keys(userData)
+      this.changeUser(this.users[0])
+    } catch (e: any) {
+      if (e.code == 401) 
+        return this.deAuth()
+      this.users = [this.user_id]
+      this.changeUser(this.users[0])
     }
-    this.owners = JSON.parse((JSON.stringify(json)));
-    this.users = Object.keys(this.owners);
-    this.selectedUser = this.users[0];
-    this.monitors = this.owners[this.selectedUser]["monitor_ids"];
-
-    this.selectedMonitor = this.monitors[0];
-    this.loading = false;
-    if (this.monitorRef)
-      this.monitorRef.nativeElement.selectedIndex = 0;
     if (this.userRef) 
       this.userRef.nativeElement.selectedIndex = 0;
-    this.getMonitorData();
   }
 
   async getMonitorData(): Promise<void> {
     if (this.selectedMonitor != undefined) {
       this.lastUpdatedDate = new Date();
       this.loading = true;
-      let json;
+
+      let monitorData;
       try {
-        json = await getJson(this.endpoint + "/monitors/get?monitor_id=" + this.selectedMonitor);
-      } catch (e) {
-        this.loading = false;
-        this.error = true;
-        return
+        monitorData = await BackendDataService.getMonitorData(this.selectedMonitor, this.token)
+      } catch (e: any) {
+        if (e.code == 401)
+          return this.deAuth()
       }
-      this.data = JSON.parse(JSON.stringify(json));
-      let props: OtherProps = JSON.parse(JSON.stringify(json));
 
-      this.string_props.foliage_feed = props.foliage_feed;
-      this.string_props.root_stream = props.root_stream;
-
-      let video = this.stream?.nativeElement
-      let videoSrc = "https://altoponix-cdn.sfo3.digitaloceanspaces.com/streaming/" + this.selectedMonitor + "/master.m3u8"
-
-      if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = videoSrc;
-      }else if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(videoSrc);
-        hls.attachMedia(video);
-      }
-      video.play()
-
-      delete this.data["foliage_feed"];
-      delete this.data["root_stream"];
-
+      let graphs: {[key: string]: StatisticGraph} = {}
+      for (var key in monitorData) 
+        if ((monitorData[key] as StatisticGraph).value !== undefined) 
+          graphs[key] = monitorData[key] as StatisticGraph
+        else
+          this.string_props[key] = monitorData[key] as string
+        
+      this.monitorData = graphs
       this.loading = false;
     }
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.timeUpdateFunc);
+    clearInterval(this.dataUpdateFunc);
+  }
+
+  changeEndpoint(endpoint: string) {
+    BackendBaseService.endpoint = endpoint;
+    this.load()
+  }
+
+  async changeUser(user_id: string) {
+    let userData: UserData;
+    try {
+      userData = await BackendDataService.getUserData(user_id, this.token)
+    } catch (e: any) {
+      if (e.code == 401)
+        return this.deAuth()
+    }
+    this.monitors = userData!.monitor_ids;
+    this.changeMonitor(this.monitors[0]);
+    if (this.monitorRef)
+      this.monitorRef.nativeElement.selectedIndex = 0;
+  }
+
+  changeMonitor(monitor_id: string) {
+    this.selectedMonitor = monitor_id;
+    this.getMonitorData();
+  }
+
+  onChangeEndpoint(e: any): void { this.changeEndpoint(e.options[e.selectedIndex].text); }
+
+  onChangeUser(e: any): void { this.changeUser(e.options[e.selectedIndex].text); }
+
+  onChangeMonitor(e: any): void { this.changeMonitor(e.options[e.selectedIndex].text); }
+
+  updateLivestream() {
+    let video = this.stream?.nativeElement
+    let videoSrc = "https://altoponix-cdn.sfo3.digitaloceanspaces.com/streaming/" + this.selectedMonitor + "/master.m3u8"
+
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = videoSrc;
+    }else if (Hls.isSupported()) {
+      var hls = new Hls();
+      hls.loadSource(videoSrc);
+      hls.attachMedia(video);
+    }
+    video.play()
+  }
+
+  deAuth(): void{
+    window.location.href = "/login";
+  }
+
+  async logout(): Promise<void> {
+    let s = window.sessionStorage
+    let l = window.localStorage
+    await BackendLoginService.logout(l.getItem("user_id") ?? s.getItem("user_id") ?? "", l.getItem("token") ?? s.getItem("token") ?? "")
+    s.removeItem("token")
+    s.removeItem("user_id")
+    s.removeItem("username")
+    l.removeItem("token")
+    l.removeItem("user_id")
+    l.removeItem("username")
+    this.route("/login")
+  }
+
+  route(url: string): void {
+    window.location.href = url;
+  }
+
+  @HostListener('document:mousedown', ['$event'])
+  onGlobalClick(event: any): void {
+    if (this.icon!.nativeElement.contains(event.target))
+      this.dropdown = true
+    if (this.dropdown && !this.drop!.nativeElement.contains(event.target)) 
+      this.dropdown = false
   }
 }
