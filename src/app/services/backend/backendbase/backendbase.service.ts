@@ -7,8 +7,7 @@ export class BackendBaseService {
 
   constructor() { }
 
-  static endpoint = "http://127.0.0.1:5000/api/v1"
-  // static endpoint = "https://altoponix-database.herokuapp.com/api/v1"
+  static endpoint = "https://altoponix-database.herokuapp.com/api/v1"
 
   static get = async(method: string, args?: {[key: string]: string|number}): Promise<{code: number, data: JSON}> => {
     return new Promise((resolve, reject) => {
