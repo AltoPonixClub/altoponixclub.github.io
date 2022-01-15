@@ -113,25 +113,25 @@ a:hover {
   background-color: rgb(247, 193, 200);
   border: 1px solid rgb(238, 139, 153);
   border-radius: 5px;
-  font-size: 12px;
+  font-size: 20px;
   text-align: left;
   padding: 10px;
   margin: 10px 10px;
   font-weight: 500;
   display: flex;
-  line-height: 20px;
+  line-height: 35px;
   flex-direction: row;
 }
 
 icon-failure {
-  height: 20px;
-  width: 20px;
-  margin-right: 2px;
+  height: 35px;
+  width: 35px;
+  margin-right: 4px;
 }
 
 icon-failure >>> svg {
-  height: 20px;
-  width: 20px;
+  height: 35px;
+  width: 35px;
 }
 
 @media (max-width: 2000px) {
@@ -156,6 +156,19 @@ icon-failure >>> svg {
   }
   a {
     font-size: 15px;
+  }
+  .error{
+    font-size: 18px;
+    line-height: 32px;
+  }
+  icon-failure {
+    height: 32px;
+    width: 32px;
+    margin-right: 4px;
+  }
+  icon-failure >>> svg {
+    height: 32px;
+    width: 32px;
   }
 }
 
@@ -182,6 +195,19 @@ icon-failure >>> svg {
   a {
     font-size: 14px;
   }
+  .error{
+    font-size: 16px;
+    line-height: 30px;
+  }
+  icon-failure {
+    height: 30px;
+    width: 30px;
+    margin-right: 3px;
+  }
+  icon-failure >>> svg {
+    height: 30px;
+    width: 30px;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -206,6 +232,19 @@ icon-failure >>> svg {
   a {
     font-size: 12px;
   }
+  .error{
+    font-size: 14px;
+    line-height: 25px;
+  }
+  icon-failure {
+    height: 25px;
+    width: 25px;
+    margin-right: 2px;
+  }
+  icon-failure >>> svg {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 @media (max-width: 750px) {
@@ -229,6 +268,19 @@ icon-failure >>> svg {
   }
   a {
     font-size: 11px;
+  }
+  .error{
+    font-size: 12px;
+    line-height: 22px;
+  }
+  icon-failure {
+    height: 22px;
+    width: 22px;
+    margin-right: 2px;
+  }
+  icon-failure >>> svg {
+    height: 22px;
+    width: 22px;
   }
 }
 
@@ -255,5 +307,18 @@ icon-failure >>> svg {
   }
   a {
     font-size: 11px;
+  }
+  .error{
+    font-size: 12px;
+    line-height: 18px;
+  }
+  icon-failure {
+    height: 18px;
+    width: 18px;
+    margin-right: 2px;
+  }
+  icon-failure >>> svg {
+    height: 18px;
+    width: 18px;
   }
 }
