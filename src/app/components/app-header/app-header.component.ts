@@ -1,7 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -11,16 +10,15 @@ import { EventEmitter } from '@angular/core';
 export class AppHeaderComponent implements OnInit {
 
   overlay: boolean = true;
-  title: string = "AltoPonix"
   disablelinks: boolean = false;
+  disableheader: boolean = false;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     let path = window.location.pathname
-    if (path === '/s2-webapp' || path === '/feed' || path === '/data') {
-      this.title = "AltoPonix Data Monitor";
-      this.disablelinks = true;
+    if (path === '/s2-webapp' || path === '/feed' || path === '/data' || path === "/login") {
+      this.disableheader = true;
     }
   }
 

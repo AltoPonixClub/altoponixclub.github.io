@@ -9,10 +9,11 @@ import { PositionsPageComponent } from './pages/positions-page/positions-page.co
 import { SubteamsPageComponent } from './pages/subteams-page/subteams-page.component';
 import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  // { path: 'subteams', component: SubteamsPageComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: 'about', component: HomePageComponent },
   { path: 'positions', component: PositionsPageComponent },
   { path: 'contact', component: ContactPageComponent },

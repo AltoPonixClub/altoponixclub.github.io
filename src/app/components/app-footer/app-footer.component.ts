@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppFooterComponent implements OnInit {
 
+  disablefooter = false
+
   constructor() { }
 
   ngOnInit(): void {
+    let path = window.location.pathname
+    if (path === '/login') {
+      this.disablefooter = true;
+    }
   }
-
 }

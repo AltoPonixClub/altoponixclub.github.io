@@ -1,27 +1,33 @@
-<div class="container-spacing"></div>
-<div class="container">
-  <div class="title-container">
-    <div class="link" (click)="route('/')">
-        <app-logo></app-logo>
-        <div class="title">{{title}}</div>
+<div *ngIf="!disableheader">
+  <div class="container-spacing"></div>
+  <div class="container">
+    <div class="title-container">
+      <div class="link" (click)="route('/')">
+          <app-logo></app-logo>
+          <div class="title">AltoPonix</div>
+      </div>
+    </div>
+    <div class="spacing"></div>
+    <button (click)="toggleOverlay()" class="overlay-button" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
+      {{overlay ? "≡" : "╳"}}
+    </button>
+    <div class="link-container" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
+      <div class="link" (click)="route('/')">Home</div>
+      <div class="link" (click)="route('/team')">Team</div>
+      <div class="link" (click)="route('/sponsor')">Sponsor</div>
+      <div class="link" (click)="route('/positions')">Apply</div>
+      <div class="vert"></div>
+      <div class="link" (click)="route('/login')">Log In</div>
     </div>
   </div>
-  <div class="spacing"></div>
-  <button (click)="toggleOverlay()" class="overlay-button" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
-    {{overlay ? "≡" : "╳"}}
-  </button>
-  <div class="link-container" [ngClass]="{' overlay': !overlay}" *ngIf="!disablelinks">
-    <div class="link" (click)="route('/')">Home</div>
-    <div class="link" (click)="route('/team')">Team</div>
-    <div class="link" (click)="route('/sponsor')">Sponsor</div>
-    <div class="link" (click)="route('/positions')">Apply</div>
-  </div>
-</div>
-<div *ngIf="!disablelinks">
-  <div class="link-container-overlay" [ngClass]="{' overlay': !overlay}">
-    <div class="link" (click)="route('/')">Home</div>
-    <div class="link" (click)="route('/team')">Team</div>
-    <div class="link" (click)="route('/sponsor')">Sponsor</div>
-    <div class="link" (click)="route('/positions')">Apply</div>
+  <div *ngIf="!disablelinks">
+    <div class="link-container-overlay" [ngClass]="{' overlay': !overlay}">
+      <div class="link" (click)="route('/')">Home</div>
+      <div class="link" (click)="route('/team')">Team</div>
+      <div class="link" (click)="route('/sponsor')">Sponsor</div>
+      <div class="link" (click)="route('/positions')">Apply</div>
+      <div class="horz"></div>
+      <div class="link" (click)="route('/login')">Log In</div>
+    </div>
   </div>
 </div>

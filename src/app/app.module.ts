@@ -18,6 +18,9 @@ import { ChartModule } from 'angular-highcharts';
 import { TeamPageComponent } from './pages/team-page/team-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
+import { BackendBaseService } from './services/backend/backendbase/backendbase.service';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { IconFailureComponent } from './icon/icon-failure/icon-failure.component';
 
 @NgModule({
   declarations: [
@@ -35,14 +38,16 @@ import { AppFooterComponent } from './components/app-footer/app-footer.component
     AppGraphComponent,
     TeamPageComponent,
     SponsorPageComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    LoginPageComponent,
+    IconFailureComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule,
+    ChartModule
   ],
-  providers: [],
+  providers: [BackendBaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
