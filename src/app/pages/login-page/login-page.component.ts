@@ -43,7 +43,6 @@ export class LoginPageComponent implements OnInit {
     let data;
     try {
       data = await BackendLoginService.login(username, password, persist)
-      console.log(data)
     } catch (e: any) {
       if (e.code == 401) 
         this.errorMsg = "Incorrect username or password."
