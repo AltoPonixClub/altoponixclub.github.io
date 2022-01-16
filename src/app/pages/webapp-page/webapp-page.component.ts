@@ -175,6 +175,14 @@ export class WebappPageComponent implements OnInit {
   }
 
   deAuth(): void{
+    let s = window.sessionStorage
+    let l = window.localStorage
+    s.removeItem("token")
+    s.removeItem("user_id")
+    s.removeItem("username")
+    l.removeItem("token")
+    l.removeItem("user_id")
+    l.removeItem("username")
     window.location.href = "/login";
   }
 

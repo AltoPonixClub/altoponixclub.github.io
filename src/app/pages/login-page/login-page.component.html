@@ -14,7 +14,13 @@
         <input #persist type="checkbox" id="log"/>
         <label for="log">Keep me logged in</label>
       </div>
-      <button (click)="log()">Log In</button>
+      <button (click)="log()">
+        <div *ngIf="!loading">Log In</div>
+        <svg *ngIf="loading" class="loading" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:none;display:block;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+          <circle cx="50" cy="50" r="25" stroke-width="4" stroke="#ffffff" stroke-dasharray="39.269908169872416 39.269908169872416" fill="none" stroke-linecap="round">
+          </circle>
+        </svg>
+      </button>
     </div>
   </div>
 </div>

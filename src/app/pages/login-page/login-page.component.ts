@@ -16,6 +16,7 @@ export class LoginPageComponent implements OnInit {
   @ViewChild("persist") persistEl?: ElementRef;
 
   errorMsg = ""
+  loading = false;
 
   constructor() { }
 
@@ -33,10 +34,13 @@ export class LoginPageComponent implements OnInit {
   }
 
   async log() {
+    this.loading = true
+    this.errorMsg = ""
     let username = this.usernameEl?.nativeElement.value
     let password = this.passwordEl?.nativeElement.value
     let persist = this.persistEl?.nativeElement.checked
     if (username == "" || password == "") {
+      this.loading = false;
       this.errorMsg = "Incorrect username or password."
       return
     }
@@ -44,12 +48,14 @@ export class LoginPageComponent implements OnInit {
     try {
       data = await BackendLoginService.login(username, password, persist)
     } catch (e: any) {
+      this.loading = false;
       if (e.code == 401) 
         this.errorMsg = "Incorrect username or password."
       else
         this.errorMsg = "An error occured. Please try again later."
       return
     }
+    this.loading = false;
     if (persist) {
       let s = window.localStorage;
       s.setItem("username", data.username)
