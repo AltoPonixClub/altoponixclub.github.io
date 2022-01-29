@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   // { path: 'subteams', component: SubteamsPageComponent },
   { path: 'about', component: HomePageComponent },
-  // { path: 'positions', component: PositionsPageComponent },
+  { path: 'positions', component: PositionsPageComponent },
   { path: 'contact', component: ContactPageComponent },
   { path: 'sponsor', component: SponsorPageComponent },
   { path: 'team', component: TeamPageComponent},

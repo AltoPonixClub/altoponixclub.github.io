@@ -7,8 +7,8 @@ import { Component, OnInit, Input, ViewChild, ElementRef, HostListener } from '@
 })
 export class AppCarouselComponent implements OnInit {
 
-  @Input() carouselImage: String[] = [];
-  @ViewChild("homepageCarousel") carousel?: ElementRef;
+  @Input() carouselData: String[][] = [];
+  @ViewChild("positionspageCarousel") carousel?: ElementRef;
   index = 0;
   target = 0;
   lastFrame = 0;
@@ -44,7 +44,7 @@ export class AppCarouselComponent implements OnInit {
     }, 5000)
     if (this.carousel) {
       let children = this.carousel.nativeElement.children;
-      let width = children[0].clientWidth
+      let width = children[0].clientWidth;
       this.index += x + children.length;
       this.index %= children.length;
       this.target = children[this.index].offsetLeft;  

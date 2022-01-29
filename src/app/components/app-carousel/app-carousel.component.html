@@ -1,7 +1,11 @@
 <div id="carouselDiv">
   <ul #homepageCarousel>
-    <li *ngFor="let image of carouselImage">
-      <img [src]="image">
+    <li *ngFor="let data of carouselData">
+      <div class="container">
+        <img [src]="data[0]">
+        <div class="title">{{data[1]}}</div>
+        <div class="description">{{data[2]}}</div>
+      </div>
     </li>
   </ul>
 </div>
