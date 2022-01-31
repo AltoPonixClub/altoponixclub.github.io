@@ -17,7 +17,7 @@ export class AppHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     let path = window.location.pathname
-    if (path === '/s2-webapp' || path === '/feed' || path === '/data' || path === "/login") {
+    if (path === '/s2-webapp' || path === '/feed' || path === '/data' || path === "/login" || path === '/s2-webapp/monitors' || path === '/s2-webapp/data' || path === '/s2-webapp/stream') {
       this.disableheader = true;
     }
   }
