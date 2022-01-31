@@ -6,12 +6,12 @@ import { BackendBaseService } from 'src/app/services/backend/backendbase/backend
 import { BackendLoginService } from 'src/app/services/backend/backendlogin/backendlogin.service';
 
 @Component({
-  selector: 'app-webapp-page',
-  templateUrl: './webapp-page.component.html',
-  styleUrls: ['./webapp-page.component.css'],
+  selector: 'app-monitor',
+  templateUrl: './monitor.component.html',
+  styleUrls: ['./monitor.component.css'],
   providers: [BackendDataService]
 })
-export class WebappPageComponent implements OnInit {
+export class MonitorComponent implements OnInit {
 
   @ViewChild('endpoint') endpointRef?: ElementRef;
   @ViewChild('user') userRef?: ElementRef;

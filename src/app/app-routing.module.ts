@@ -19,7 +19,20 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'sponsor', component: SponsorPageComponent },
   { path: 'team', component: TeamPageComponent},
-  { path: 's2-webapp', component: WebappPageComponent },
+  { path: 's2-webapp', component: WebappPageComponent, children: [
+    {
+      path: 'monitors',
+      loadChildren: () => import('./pages/webapp-page/monitor/monitor.module').then(m=>m.MonitorModule)
+    },
+    {
+      path: 'data',
+      loadChildren: () => import('./pages/webapp-page/data/data.module').then(m=>m.DataModule)
+    },
+    {
+      path: 'stream',
+      loadChildren: () => import('./pages/webapp-page/stream/stream.module').then(m=>m.StreamModule)
+    }
+  ] },
   { path: 'feed', redirectTo: '/s2-webapp', pathMatch: 'full' },
   { path: 'data', redirectTo: '/s2-webapp', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

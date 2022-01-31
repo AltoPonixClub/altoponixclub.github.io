@@ -1,0 +1,63 @@
+<div class="container-spacing"></div>
+<div class="header-container">
+  <div class="title-container">
+    <div class="link"  (click)="route('/')">
+        <div class="title">AltoPonix Data Monitor</div>
+    </div>
+  </div>
+  <div class="spacing"></div>
+  <div #icon class="user"></div>
+</div>
+<div #drop class="drop" *ngIf="dropdown">
+  <div class="dropdown-link" (click)="logout()">Log Out</div>
+</div>
+<div *ngIf="token != ''">
+    <div class="options-grid">
+      <div class="container">
+        Select API Endpoint<br>
+        <select #endpoint (change)="onChangeEndpoint($event.target)">
+          <option value="heroku">https://altoponix-database.herokuapp.com/api/v1</option>
+          <option value="localhost">http://127.0.0.1:5000/api/v1</option>
+        </select>
+      </div>
+      <div class="container">
+        Select User<br>
+        <select #user (change)="onChangeUser($event.target)">
+          <option *ngFor="let user of users">{{user}}</option>
+        </select>
+      </div>
+      <div class="container">
+        Select Monitor<br>
+        <select #monitor (change)="onChangeMonitor($event.target)">
+          <option *ngFor="let monitor of monitors">{{monitor}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="update"><i>{{lastUpdatedDateString}}</i></div>
+    <div class="data-grid">
+      <div *ngFor="let stat of monitorData | keyvalue" class="stat">
+        <div class="stat-container">
+          <div class="stat-name">{{stat.key}}</div>
+          <div class="stat-value" *ngIf="stat.value['value']==null">-</div>
+          <div class="stat-value" *ngIf="stat.value['value']!=null">{{stat.value["value"]}}</div>
+          <!-- <app-graph [data]="stat.value"></app-graph> -->
+        </div>
+      </div>
+    </div>
+    <div class="prop-grid">
+      <div *ngFor="let prop of string_props | keyvalue" class="prop">
+        <div class="stat-container">
+          <div class="stat-name">{{prop.key}}: {{prop.value}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="prop-grid">
+      <div class="prop">
+        <div class="stat-container">
+          <div class="stat-name">Stream:</div>
+          <video #stream src="" id="video" style="border: 1px black solid" autoplay controls></video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="token == ''" class="hide"></div>

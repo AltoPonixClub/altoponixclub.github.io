@@ -21,6 +21,9 @@ import { AppFooterComponent } from './components/app-footer/app-footer.component
 import { BackendBaseService } from './services/backend/backendbase/backendbase.service';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { IconFailureComponent } from './icon/icon-failure/icon-failure.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { IconFailureComponent } from './icon/icon-failure/icon-failure.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartModule
+    ChartModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule
   ],
   providers: [BackendBaseService],
   bootstrap: [AppComponent]

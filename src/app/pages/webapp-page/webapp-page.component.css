@@ -304,3 +304,28 @@ app-logo >>> img{
     padding: 10px 50px;
   }
 }
+
+mat-sidenav-container {
+  height: 100%
+}
+
+mat-sidenav, mat-sidenav-content {
+  padding: 16px
+}
+
+mat-sidenav {
+  width: 150px
+}
+
+mat-toolbar {
+  /* position: fixed; */
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+app-header {
+  height: 0px
+}

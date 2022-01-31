@@ -1,7 +1,22 @@
-<div class="container-spacing"></div>
+
+<mat-sidenav-container>
+  <mat-sidenav md-is-locked-open="true" #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['monitors']">Monitors</a>
+      <a mat-list-item [routerLink]="['data']">Values</a>
+      <a mat-list-item [routerLink]="['stream']">Stream</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-container>
+   <router-outlet>
+   </router-outlet>
+  </mat-sidenav-container>
+</mat-sidenav-container>
+
+<!-- <div class="container-spacing"></div>
 <div class="header-container">
   <div class="title-container">
-    <div class="link" (click)="route('/')">
+    <div class="link"  (click)="route('/')">
         <app-logo></app-logo>
         <div class="title">AltoPonix Data Monitor</div>
     </div>
@@ -61,4 +76,4 @@
     </div>
   </div>
 </div>
-<div *ngIf="token == ''" class="hide"></div>
+<div *ngIf="token == ''" class="hide"></div> -->
