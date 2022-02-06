@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /data/
+Disallow: /s2-webapp/
+Disallow: /feed/
+Sitemap: https://altoponixclub.github.io/sitemap.xml
