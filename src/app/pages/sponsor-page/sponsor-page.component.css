@@ -236,21 +236,21 @@ a {
 }
 
 .green {
-  background-color: rgb(91, 238, 189);
+  background-color: rgb(91, 238, 182);
 }
 
 .tier.silver {
-  background-color: rgb(192, 192, 192);
+  background-color: #aaa9ad;
   border: 1px solid rgb(180, 180, 180);
 }
 
 .tier.gold {
-  background-color: rgb(255, 215, 0);
-  border: 1px solid rgb(240, 200, 0);
+  background-color: #d4af37;
+  border: 1px solid rgb(204, 176, 19);
 }
 
 .tier.green {
-  background-color: rgb(179, 243, 213);
+  background-color: rgb(118, 211, 160);
   border: 1px solid rgb(153, 223, 190);
 }
 

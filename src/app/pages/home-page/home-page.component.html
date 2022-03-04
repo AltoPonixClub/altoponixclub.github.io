@@ -11,6 +11,71 @@
     <img src="../../../assets/s2_detailed.png">
   </div> 
 </div>
+<div class="sponsors gray">
+  <div class="sponsors-title">
+    Special thanks to our sponsors:
+  </div>
+  <div *ngIf="sponsorOrgsGold.length > 0">
+    <div class="gold-grad">
+      Gold Tier:
+      <div class="sponsor-grid">
+        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsGold" (click)="route(sponsor.url)">
+          <div class="sponsor-img">
+            <img [src]="sponsor.img">
+          </div>
+          <div class="sponsor-desc">
+            <p [innerHTML]="sponsor.description"></p>
+          </div>
+        </div>    
+      </div>
+      <div class="sponsor-grid">
+        <div class="sponsor-name" *ngFor="let sponsor of sponsorIndividualsGold">
+          {{sponsor}}
+        </div>    
+      </div>
+    </div>
+  </div>
+  <div *ngIf="sponsorOrgsSilver.length > 0">
+    <div class="silver-grad">
+      Silver Tier:
+      <div class="sponsor-grid">
+        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsSilver" style="width: 23vw; height: 14vw">
+          <div class="sponsor-img">
+            <img [src]="sponsor.img" style="width: 23vw; height: 14w">
+          </div>
+          <div class="sponsor-desc" style="width: 23vw; height: 14w; top: -15vw;">
+            <p [innerHTML]="sponsor.description"></p>
+          </div>
+        </div>    
+      </div>
+      <div class="sponsor-grid">
+        <div class="sponsor-name medium" *ngFor="let sponsor of sponsorIndividualsSilver">
+          {{sponsor}}
+        </div>    
+      </div>
+    </div>
+  </div>
+  <div *ngIf="sponsorOrgsGreen.length > 0">
+    <div class="green-grad">
+      Green Tier:
+      <div class="sponsor-grid">
+        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsGreen" style="width: 15vw; height: 10vw">
+          <div class="sponsor-img">
+            <img [src]="sponsor.img" style="width: 15vw; height: 10vw">
+          </div>
+          <div class="sponsor-desc" style="width: 15vw; height: 10vw; top: -11vw">
+            <p [innerHTML]="sponsor.description"></p>
+          </div>
+        </div>    
+      </div>
+      <div class="sponsor-grid">
+        <div class="sponsor-name small" *ngFor="let sponsor of sponsorIndividualsGreen">
+          {{sponsor}}
+        </div>    
+      </div>
+    </div>
+  </div>
+</div>
 <div class="jumbotron"> 
   <div class="section">
     <div class="title centered">

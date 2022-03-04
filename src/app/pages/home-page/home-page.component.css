@@ -135,12 +135,110 @@ button {
   margin-top: 10px;
 }
 
+.sponsors {
+  padding: 0% 5%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 50px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsors-title {
+  padding: 2% 5%;
+}
+
+.sponsor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.sponsor-grid .sponsor-item {
+  width: 30vw;
+  margin: 1vw;
+  height: 15vw;
+}
+
+.sponsor-desc {
+  position: relative;
+  top: -15vw;
+  /* background-color: rgba(100,100,100,0); */
+  background: radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  opacity: 0;
+  font-weight: 300;
+  transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  transition-property: filter, opacity;
+  font-size: 26px;
+  width: 30vw;
+  height: 15vw;
+  filter: blur(3px);
+  line-height: 1.25rem;
+  padding: 10px;
+}
+
+.sponsor-grid .sponsor-img img {
+  width: 30vw;
+  height: 15vw;
+  object-fit: contain;
+  transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  transition-property: filter, transform;
+}
+
+.sponsor-grid .sponsor-item:hover .sponsor-desc, .sponsor-grid .sponsor-item:active .sponsor-desc {
+  /* background-color: rgba(160,160,160,0.8); */
+  filter: blur(0px);
+  opacity: 1;
+}
+
+.sponsor-grid .sponsor-item:hover .sponsor-img img, .sponsor-grid .sponsor-item:active .sponsor-img img {
+  filter: blur(9px);
+  transform: scale(0.9);
+}
+
+.sponsor-name {
+  width: 20vw;
+  margin: 1vw;
+  color: black;
+  font-weight: 300;
+  font-size: 26px;
+}
+
+.gold-grad {
+  background: linear-gradient(to right, rgba(204, 176, 19, 0), rgb(204, 176, 19), rgba(204, 176, 19, 0));
+  padding: 20px 0px;
+  width: 100vw;
+}
+
+.silver-grad {
+  background: linear-gradient(to right, rgba(180, 180, 180, 0), rgb(180, 180, 180), rgba(180, 180, 180, 0));
+  padding: 20px 0px;
+  width: 100vw;
+}
+
+.green-grad {
+  background: linear-gradient(to right, rgba(118, 211, 160, 0), rgb(118, 211, 160), rgba(118, 211, 160, 0));
+  padding: 20px 0px;
+  width: 100vw;
+}
+
 button:hover{
   background-color: rgb(65, 216, 158);
 } 
 
 .green {
   background-color: rgb(243, 248, 238);
+}
+
+.gray {
+  background-color: rgb(219, 219, 219);
 }
 
 .centered  {
@@ -152,9 +250,31 @@ button:hover{
   align-items: center;
 }
 
+.sponsor-line {
+  background: linear-gradient(to right, rgb(219, 219, 219), rgb(192, 192, 192), rgb(219, 219, 219));
+  height: 2px;
+  color: none;
+  width: 70vw;
+}
+
 @media (max-width: 2000px) {
   .section >>> .title {
     font-size: 44px;
+  }
+  .sponsors {
+    font-size: 44px;
+  }
+  .sponsor-desc {
+    font-size: 22px;
+  }
+  .sponsor-name {
+    font-size: 30px;
+  }
+  .sponsor-name.medium {
+    font-size: 22px;
+  }
+  .sponsor-name.small {
+    font-size: 15px;
   }
   .section >>> .subtitle {
     font-size: 22px;
@@ -176,6 +296,21 @@ button:hover{
 @media (max-width: 1600px) {
   .section >>> .title {
     font-size: 34px;
+  }
+  .sponsors {
+    font-size: 34px;
+  }
+  .sponsor-desc {
+    font-size: 15px;
+  }
+  .sponsor-name {
+    font-size: 25px;
+  }
+  .sponsor-name.medium {
+    font-size: 20px;
+  }
+  .sponsor-name.small {
+    font-size: 15px;
   }
   .section >>> .subtitle {
     font-size: 15px;
@@ -206,6 +341,18 @@ button:hover{
   .section >>> .subtitle {
     font-size: 20px;
   }
+  .sponsor-desc {
+    font-size: 20px;
+  }
+  .sponsor-name {
+    font-size: 25px;
+  }
+  .sponsor-name.medium {
+    font-size: 20px;
+  }
+  .sponsor-name.small {
+    font-size: 15px;
+  }
   .section >>> img {
     margin: 0 10px;
   }
@@ -227,6 +374,18 @@ button:hover{
   .section >>> .subtitle {
     font-size: 17px;
   }
+  .sponsor-desc {
+    font-size: 17px;
+  }
+  .sponsor-name {
+    font-size: 20px;
+  }
+  .sponsor-name.medium {
+    font-size: 18px;
+  }
+  .sponsor-name.small {
+    font-size: 14px;
+  }
   .section >>> img {
     max-width: 220px;
     max-height: 150px;
@@ -244,6 +403,18 @@ button:hover{
 @media (max-width: 450px) {
   .section >>> .subtitle {
     font-size: 14px;
+  }
+  .sponsor-desc {
+    font-size: 14px;
+  }
+  .sponsor-name {
+    font-size: 16px;
+  }
+  .sponsor-name.medium {
+    font-size: 13px;
+  }
+  .sponsor-name.small {
+    font-size: 11px;
   }
   .section >>> img {
     margin: 20px 0px;
