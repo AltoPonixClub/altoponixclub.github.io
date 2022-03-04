@@ -22,7 +22,7 @@ export class HomePageComponent implements OnInit {
     and educational institutions. They sponsor our 
     team by providing us free parts totalling hundreds of dollars, 
     making it possible for our team to use these standard industry 
-    tools in our robotics solutions. <b>ODriveRobotics</b> continues to 
+    tools in our robotics solutions. <br><br><b>ODriveRobotics</b> continues to 
     drive forth innovation in the field of robotics, including 
     partnering with AltoPonix.`, img: "../assets/sponsors/odrive.png", url: "https://odriverobotics.com"},
     // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},

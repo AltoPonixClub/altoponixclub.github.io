@@ -167,7 +167,7 @@ button {
   position: relative;
   top: -15vw;
   /* background-color: rgba(100,100,100,0); */
-  background: radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  background: radial-gradient(ellipse closest-side, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -176,12 +176,13 @@ button {
   font-weight: 300;
   transition: 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
   transition-property: filter, opacity;
-  font-size: 26px;
+  font-size: 1.2vw;
   width: 30vw;
   height: 15vw;
   filter: blur(3px);
-  line-height: 1.25rem;
+  line-height: 1.25em;
   padding: 10px;
+
 }
 
 .sponsor-grid .sponsor-img img {
@@ -193,14 +194,13 @@ button {
 }
 
 .sponsor-grid .sponsor-item:hover .sponsor-desc, .sponsor-grid .sponsor-item:active .sponsor-desc {
-  /* background-color: rgba(160,160,160,0.8); */
   filter: blur(0px);
   opacity: 1;
 }
 
 .sponsor-grid .sponsor-item:hover .sponsor-img img, .sponsor-grid .sponsor-item:active .sponsor-img img {
-  filter: blur(9px);
-  transform: scale(0.9);
+  filter: blur(15px);
+  transform: scale(0.8);
 }
 
 .sponsor-name {
@@ -264,9 +264,6 @@ button:hover{
   .sponsors {
     font-size: 44px;
   }
-  .sponsor-desc {
-    font-size: 22px;
-  }
   .sponsor-name {
     font-size: 30px;
   }
@@ -299,9 +296,6 @@ button:hover{
   }
   .sponsors {
     font-size: 34px;
-  }
-  .sponsor-desc {
-    font-size: 15px;
   }
   .sponsor-name {
     font-size: 25px;
@@ -341,9 +335,6 @@ button:hover{
   .section >>> .subtitle {
     font-size: 20px;
   }
-  .sponsor-desc {
-    font-size: 20px;
-  }
   .sponsor-name {
     font-size: 25px;
   }
@@ -374,9 +365,6 @@ button:hover{
   .section >>> .subtitle {
     font-size: 17px;
   }
-  .sponsor-desc {
-    font-size: 17px;
-  }
   .sponsor-name {
     font-size: 20px;
   }
@@ -404,14 +392,11 @@ button:hover{
   .section >>> .subtitle {
     font-size: 14px;
   }
-  .sponsor-desc {
-    font-size: 14px;
-  }
   .sponsor-name {
     font-size: 16px;
   }
   .sponsor-name.medium {
-    font-size: 13px;
+    font-size: 3px;
   }
   .sponsor-name.small {
     font-size: 11px;
