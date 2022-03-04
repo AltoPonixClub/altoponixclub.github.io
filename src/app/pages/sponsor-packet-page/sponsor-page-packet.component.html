@@ -1,0 +1,104 @@
+<script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+<div class="jumbotron">
+  <div class="container">
+    <div class="header">
+      <div class="gradient">
+        <div class="content">
+          <div class="title">
+            Support Us
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="money-bar">
+      <div class="amount inline">${{displayMoneyRounded}}</div> out of $5000
+      <div class="bar-container">
+        <div #bar class="bar-filled"></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="subtitle">
+        <div class="paragraph">
+          <b>AltoPonix</b> is a <b>student-run non-profit tech research organization</b> aimed at
+          developing a new fully automated hydroponics apparatus known as <b>S2</b>. 
+          Our planned robotics system is a platform elevator that periodically 
+          douses a set of plants in an aqueous nutrient solution while monitoring 
+          the chemical composition of the solution. This will allow us to grow plants 
+          in nearly half the time with more dense foliage resulting in <b>significantly 
+          higher yields.</b> We track meaningful and relevant data via a large onboard 
+          sensor suite, utilizing software subcomponents that include <b>machine learning 
+          state prediction, foliage segmentation, stereo depth for 3d mapping, 
+          and general control theory.</b> We also can continuously monitor the parameters of the system with a webapp.
+        </div>
+        <div class="paragraph">
+          We, <b>students</b>, created AltoPonix wanting to bring 
+          an idea to life. Our team of 15 members has
+          already spent six months and over 2000 hours
+          working on our project but cannot go further
+          without money, which is why
+          we are reaching out to benevolent individuals like
+          you for financial support. 
+        </div>
+        <div class="paragraph">
+          As high school students, we still have much to
+          learn with AltoPonix, whether that be in software,
+          electrical, or mechanical engineering - however 
+          that cannot happen without the opportunity to build this.
+          Money is our primary constraint, and with your help,
+          <b>we can bring this design to reality</b>.
+        </div>
+        <div class="paragraph">
+          <b>Note</b>: We are an IRS 501(c)3 validated organization. Any and all donations are
+          considered tax deductible and may be eligible for company matching.
+        </div>
+      </div>
+    </div>
+    <div class="section break lightgray" id="benefits-section">
+      <div class="donations-inline">
+        <div class="tier" *ngFor="let tier of tiers" [class]="tier.tier">
+          <div class="amount">
+            ${{tier.amount}}
+          </div>
+          <hr>
+          <div class="benefits">
+            <div class="benefit" *ngFor="let benefit of tier['benefits']">
+              {{benefit}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="section green">
+        <div class="title">
+          Donate with PayPal
+        </div>
+        <div class="button">
+          <a href="https://www.paypal.com/donate/?hosted_button_id=FVR6DD3FX8WPS" target="_blank">Donate</a>
+        </div>
+      </div>
+      <div class="section gray">
+        <div class="title">
+          Or contact us for sponsorships
+          <div class="button">
+            <a href="mailto:altoponix@gmail.com" target="_blank">Sponsor</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!--edit these in the ts file-->
+  <div class="donations">
+    <div class="tier" *ngFor="let tier of tiers" [class]="tier.tier">
+      <div class="amount">
+        ${{tier.amount}}
+      </div>
+      <hr>
+      <div class="benefits">
+        <div class="benefit" *ngFor="let benefit of tier['benefits']">
+          {{benefit}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -25,22 +25,27 @@ export class HomePageComponent implements OnInit {
     tools in our robotics solutions. <b>ODriveRobotics</b> continues to 
     drive forth innovation in the field of robotics, including 
     partnering with AltoPonix.`, img: "../assets/sponsors/odrive.png", url: "https://odriverobotics.com"},
-    {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
+    // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
   ]
 
   sponsorOrgsSilver: Sponsor[] = [
-    {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
-    {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
+    // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
+    // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
   ]
 
   sponsorOrgsGreen: Sponsor[] = [
-    {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
-    {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
+    // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
+    // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
   ]
 
-  sponsorIndividualsGold: String[] = ["john test"]
-  sponsorIndividualsSilver: String[] = ["john test"]
-  sponsorIndividualsGreen: String[] = ["john test"]
+  // sponsorIndividualsGold: String[] = ["john test"]
+  // sponsorIndividualsSilver: String[] = ["john test"]
+  // sponsorIndividualsGreen: String[] = ["john test"]
+
+
+  sponsorIndividualsGold: String[] = []
+  sponsorIndividualsSilver: String[] = []
+  sponsorIndividualsGreen: String[] = []
   
   constructor() { }
 

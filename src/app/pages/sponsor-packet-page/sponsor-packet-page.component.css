@@ -1,0 +1,389 @@
+.jumbotron {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.gradient{
+  background:
+          linear-gradient(127deg, rgba(102, 173, 112, 0.8), rgba(74, 148, 72, 0) 12.35%),
+          linear-gradient(336deg, rgba(56, 189, 138, 0.8), rgba(134, 179, 52, 0) 25.25%),
+          linear-gradient(83deg, rgba(74, 204, 187, 0.8), rgba(57, 214, 117, 0) 50.63%),
+          linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
+          linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
+  background-size: 400% 400%;
+  display: flex;
+  color:black;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  overflow: hidden;
+  background-color: white;
+  flex-direction: row;
+  width: 100vw;
+}
+
+@-webkit-keyframes Gradient {
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+@-moz-keyframes Gradient {
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+@keyframes Gradient { 
+  0%{background-position:0% 72%}
+  50%{background-position:100% 29%}
+  100%{background-position:0% 72%}
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+}
+
+.header .content {
+  flex: 1 0 auto;
+  width: 50%;
+  padding: 2% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header >>> .title {
+  font-size: 3vw;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section {
+  background-color: white;
+  padding: 3% 5%;
+}
+
+.section .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.section >>> .title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.section >>> .subtitle {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+.donations {
+  border-left: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  position: fixed;
+  right: 0;
+  height: 90%;
+  overflow: auto;
+  background-color: white;
+}
+
+.donations >>> .title {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.donations-inline {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  overflow-x: auto;
+}
+
+#benefits-section {
+  display: none;
+}
+
+.donations-inline >>> .title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.donations-inline >>> .tier {
+  width: 200px;
+  height: 200px;
+  margin-right: 10px;
+}
+
+.money-bar {
+  width: 100%;
+  padding: 2% 5% 0% 5%;
+  font-weight: 100;
+}
+
+.bar-container {
+  background-color: #ddd;
+  border-radius: 10vw;
+  margin-top: 10px;
+}
+
+.bar-filled {
+  background:
+          linear-gradient(127deg, rgba(102, 173, 112, 0.8), rgba(74, 148, 72, 0) 12.35%),
+          linear-gradient(336deg, rgba(56, 189, 138, 0.8), rgba(134, 179, 52, 0) 25.25%),
+          linear-gradient(83deg, rgba(74, 204, 187, 0.8), rgba(57, 214, 117, 0) 50.63%),
+          linear-gradient(175deg, rgba(27, 177, 119, 0.8), rgba(21, 177, 117, 0) 75.73%),
+          linear-gradient(280deg, rgba(54, 211, 151, 0.8), rgba(34, 212, 174, 0) 90.73%);
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  height: 30px;
+  border-radius: 10vw;
+  width: 0%;
+  background-size: 400% 400%;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.25, .15, 0, .94);
+  min-width: 3%
+}
+
+.tier {
+  background-color: rgb(235, 241, 228);
+  border: 1px solid rgb(193, 221, 165);
+  padding: 15px;
+  height: 200px;
+  margin: 10px 0;
+  flex: 0 0 auto;
+  border-radius: 10px;
+}
+
+.tier hr {
+  margin: 5px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+}
+
+.amount {
+  font-size: 35px;
+  font-weight: 100;
+}
+
+.benefit {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.paragraph {
+  margin-bottom: 1em;
+  line-height: 1.5em;
+}
+
+.button {
+  border-radius: 10vw;
+  border: 1px #ddd solid;
+  background-color: rgb(27, 177, 119);
+  color:white;
+  width: 120px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: 300;
+  transition: ease-out;
+  transition-duration: 0.3s;
+  transition-property: background-color;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  line-height: 35px;
+}
+
+.donateContainer:hover{
+  background-color: rgb(65, 216, 158);
+} 
+
+a {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none !important;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gray {
+  background-color: rgb(236, 236, 236);
+}
+
+.lightgray {
+  background-color: rgb(247, 247, 247);
+}
+
+.green {
+  background-color: rgb(91, 238, 189);
+}
+
+.tier.silver {
+  background-color: rgb(192, 192, 192);
+  border: 1px solid rgb(180, 180, 180);
+}
+
+.tier.gold {
+  background-color: rgb(255, 215, 0);
+  border: 1px solid rgb(240, 200, 0);
+}
+
+.tier.green {
+  background-color: rgb(179, 243, 213);
+  border: 1px solid rgb(153, 223, 190);
+}
+
+.tier.blue {
+  background-color: rgb(144, 191, 252);
+  border: 1px solid rgb(124, 173, 238);
+}
+
+.break {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.centered  {
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+}
+
+@media (max-width: 2000px) {
+  .section >>> .title {
+    font-size: 40px;
+  }
+  .section >>> .subtitle {
+    font-size: 26px;
+  }
+  .donations >>> .title {
+    font-size: 26px;
+  }
+  .amount {
+    font-size: 35px;
+  }
+  .benefit {
+    font-size: 17px;
+  }
+  button {
+    width: 208px;
+    height: 60px;
+    font-size: 29px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .section >>> .title {
+    font-size: 29px;
+  }
+  .section >>> .subtitle {
+    font-size: 20px;
+  }
+  .donations >>> .title {
+    font-size: 23px;
+  }
+  .amount {
+    font-size: 30px;
+  }
+  .benefit {
+    font-size: 14px;
+  }
+  button {
+    width: 120px;
+    height: 35px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+  .donations {
+    display: none;
+  }
+  .donations-inline {
+    display: flex;
+  }
+  #benefits-section {
+    display: block;
+  }
+  .container {
+    width: 100vw;
+  }
+  .section >>> .title {
+    font-size: 25px;
+  }
+  .section >>> .subtitle {
+    font-size: 15px;
+  }
+  .section >>> img {
+    margin: 0 10px;
+  }
+  .donations >>> .title {
+    font-size: 20px;
+  }
+  .amount {
+    font-size: 25px;
+  }
+  .benefit {
+    font-size: 15px;
+  }
+  button {
+    width: 154px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .section >>> .title {
+    font-size: 18px;
+  }
+  .section >>> .subtitle {
+    font-size: 12px;
+  }
+  .amount {
+    font-size: 25px;
+  }
+  .benefit {
+    font-size: 13px;
+  }
+  button {
+    width: 120px;
+    height: 35px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  button {
+    width: 86px;
+    height: 25px;
+    font-size: 12px;
+  }
+}
