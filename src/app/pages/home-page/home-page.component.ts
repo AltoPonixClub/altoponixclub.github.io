@@ -34,7 +34,7 @@ export class HomePageComponent implements OnInit {
   ]
 
   sponsorOrgsGreen: Sponsor[] = [
-    // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
+    {description: "Thank you to <b>ACTEnviro</b> for their monetary donation to the project!", img: "../assets/sponsors/actenviro.png", url: "https://www.actenviro.com/"},
     // {description: "hello i am a test sponsor", img: "../assets/sponsors/odrive.png", url: "https://google.com"},
   ]
 

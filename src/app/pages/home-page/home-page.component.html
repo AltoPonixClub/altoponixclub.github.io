@@ -39,7 +39,7 @@
     <div class="silver-grad">
       Silver Tier:
       <div class="sponsor-grid">
-        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsSilver" style="width: 23vw; height: 14vw">
+        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsSilver" (click)="route(sponsor.url)" style="width: 23vw; height: 14vw">
           <div class="sponsor-img">
             <img [src]="sponsor.img" style="width: 23vw; height: 14w">
           </div>
@@ -59,11 +59,11 @@
     <div class="green-grad">
       Green Tier:
       <div class="sponsor-grid">
-        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsGreen" style="width: 15vw; height: 10vw">
+        <div class="sponsor-item" *ngFor="let sponsor of sponsorOrgsGreen" (click)="route(sponsor.url)" style="width: 12vw; height: 8vw">
           <div class="sponsor-img">
-            <img [src]="sponsor.img" style="width: 15vw; height: 10vw">
+            <img [src]="sponsor.img" style="width: 12vw; height: 8vw">
           </div>
-          <div class="sponsor-desc" style="width: 15vw; height: 10vw; top: -11vw">
+          <div class="sponsor-desc" style="width: 12vw; height: 8vw; top: -9vw">
             <p [innerHTML]="sponsor.description"></p>
           </div>
         </div>    
