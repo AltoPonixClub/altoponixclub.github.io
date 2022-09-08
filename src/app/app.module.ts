@@ -15,7 +15,7 @@ import { WebappPageComponent } from './pages/webapp-page/webapp-page.component';
 import { AppCarouselComponent } from './components/app-carousel/app-carousel.component';
 import { AppGraphComponent } from './components/app-graph/app-graph.component';
 import { ChartModule } from 'angular-highcharts';
-import { TeamPageComponent } from './pages/team-page/team-page.component';
+// import { TeamPageComponent } from './pages/team-page/team-page.component';
 import { SponsorPageComponent } from './pages/sponsor-page/sponsor-page.component';
 import { AppFooterComponent } from './components/app-footer/app-footer.component';
 import { BackendBaseService } from './services/backend/backendbase/backendbase.service';
@@ -36,7 +36,7 @@ import { IconFailureComponent } from './icon/icon-failure/icon-failure.component
     WebappPageComponent,
     AppCarouselComponent,
     AppGraphComponent,
-    TeamPageComponent,
+    // TeamPageComponent,
     SponsorPageComponent,
     AppFooterComponent,
     LoginPageComponent,
